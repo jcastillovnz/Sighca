@@ -180,6 +180,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
 
 
 
+
 <li>
 
 
@@ -367,9 +368,10 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
                         @endif
 
 
-
    <script src="{{ asset('js/jquery.js   ') }}   " ></script>
     <script src="  {{ asset('js/jquery.easing.min.js   ') }}  " ></script>
+
+
 
 
 
@@ -431,54 +433,73 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
+
 <div   id="separador"   class="separador">
 
 </div>
 
 
+<div class="container azul">
+    <ol class="breadcrumb breadcrumb-arrow ">
+    <li><a href="{{ url('/') }}">Inicio</a></li>
+    <li><a href="">Nuevo pensum </a></li>
+    
+  </ol>
+</div>
 
 
 
 
 <section  id="seccion"     >   
-
-<div class="container"    >
-
-
+ 
+  
 
 
 
 
-<form role="form" action="{{ url('/busqueda') }}"
- method="GET"   >
-{{ csrf_field() }}
-<div class="form-group">
- <div class="input-group  ">
-<input type="text" id="buscar" name="buscar" class="form-control   " required=""       >
-<span class="input-group-btn   ">
-<button title="Haz una busqueda" class="btn btn-success  " type="submit"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
-</span>
-</div>
-</form> 
-</div>
 
-
-
-<div id="main" class="wrapper row "> 
-<div class="col-md-12">
-
-
-
-
-<div class="row ">
-<div class="col-sm-12">
+    <div class="">
 
 
 
 
 
 
-<div    class="container">
+      <div class="container"    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="main" class="wrapper row ">      
+
+
+
+
+
+
   
 
 
@@ -487,7 +508,8 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-</div>
+
+                  <div class="col-md-12">
 
 
 
@@ -503,94 +525,212 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-<div class="panel panel-default">
-<div  class="panel-heading">
 
 
 
-<span  style=" padding-left: 16px;  " class="text-success"  title="Estatus" style=""> 
-<i class="fa fa-calendar" aria-hidden="true"></i> Sistema de gestion y control de horarios</span>
+               
+
+
+
+   <div class="row ">
+            <div class="col-sm-12">
+
+
+
+
+
+
+
+
+
+
+
+                <div class="panel panel-default">
+ 
+
+  <div  class="panel-heading">
+
+ <span  style="padding-left: 20px;          font-size: 15px;">
+
+
+<strong><i class="fa fa-plus-circle" aria-hidden="true"></i>
+Nuevo
+pensum</strong>
+
+
 </span >
-<!-- cierre panel heading -->
-</div>
 
 
 
 
 
-<div class="panel-body ">
+
+</span >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="panel-body ">
               
 
+
+
+
+
 <div class="form-group col-sm-4">  
-<div class="well"  style="font-size: 20px;   height: 200px;">
+
+
+
+
+<div class="well"  style="font-size: 40px;   height: 255px;">
 <center style="padding-top: 22%"   >
+
 
 <i class="fa fa-address-book" aria-hidden="true"></i>
 Pensum
 
 </center>
-
 </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="form-group col-sm-8">       
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-graduation-cap"></span>
+</span>
+<input type="email"  title="Carrera" class="form-control" name="correo"   id="correo"   placeholder="Carrera" required /></div>
+</div>
+
+
+
+<div class="form-group col-sm-8">
+ <div class="input-group"   title="Regimen">
+<span class="input-group-addon"><span class="fa fa-clock-o"></span>
+</span>
+<select  id="ciudad" name="ciudad" class="form-control form-control-lg" >
+<option value="" selected="">Regimen</option>
+<option value="El tigre">Diurno</option>
+<option value="San jose de guanipa">Nocturno</option>
+       
+</select>
+</div>
+</div>
+
+
+<div class="form-group col-sm-8">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-calendar"></span>
+</span>
+<input type="text"  title="Vigencia" class="form-control" name="correo"   id="correo"   placeholder="Vigencia" required /></div> 
+</div>
+
+
+
+
+<div class="form-group col-sm-8">
+ <div class="input-group"   title="Regimen">
+<span class="input-group-addon"><span class="fa fa-plus"></span>
+</span>
+<input type="email"  title="Carrera" class="form-control" name="correo"   id="correo"   placeholder="Numero de semestres" required />
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group col-sm-8">
+<button class="btn btn-success btn-sm btn-circle  pull-right"  > <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>  Continuar   </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- BLOQUE SECCION -->
+<!--  
+<div class="col-sm-12">
+<hr style="padding: 10px;   " >
 </div>
 
 
 
 <div class="form-group col-sm-4">  
-<div class="well"  style="font-size:20px;    height: 200px;">
+
+
+
+
+<div class="well"  style="font-size: 40px;   height: 255px;">
 <center style="padding-top: 22%"   >
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Profesores
-
-</center>
-</div>
-</div>
-
-
-<div class="form-group col-sm-4">  
-<div class="well"  style="font-size: 20px;   height: 200px;">
-<center style="padding-top: 22%"   >
 
 <i class="fa fa-address-book" aria-hidden="true"></i>
-Infraestructura
-
-</center>
-</div>
-</div>
-
-
-<!-- Carreras -->
-
-
-
-<div class="form-group col-sm-6">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
-
-</center>
-</div>
-</div>
-
-<div class="form-group col-sm-6">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
-
-</center>
-</div>
-</div>
-
-<div class="form-group col-sm-12">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
+Semestre 1
 
 </center>
 </div>
@@ -603,18 +743,282 @@ Ingenieria de sistemas
 
 
 
-</div><!-- cierre panel body-->
-</div><!-- cierre panel default-->
+
+<div class="form-group col-sm-4">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-book"></span>
+</span>
+<input type="text"  title="Vigencia" class="form-control input-sm" name="correo"   id="correo"   placeholder="Asignatura" required /></div>
+</div>
+
+<div class="form-group col-sm-4">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-book"></span>
+</span>
+<input type="text"  title="Vigencia" class="form-control input-sm" name="correo"   id="correo"   placeholder="Asignatura" required /></div>
+</div>
+
+
+
+
+
+<div class="form-group col-sm-4">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-book"></span>
+</span>
+<input type="text"  title="Vigencia" class="form-control input-sm" name="correo"   id="correo"   placeholder="Asignatura" required /></div>
+</div>
+
+
+
+<div class="form-group col-sm-4">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-book"></span>
+</span>
+<input type="text" title="Vigencia" class="form-control input-sm" name="correo"   id="correo"   placeholder="Asignatura" required /></div>
+</div>
+
+
+
+
+
+
+<div class="form-group col-sm-4">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-book"></span>
+</span>
+<input type="text"  title="Vigencia" class="form-control input-sm" name="correo"   id="correo"   placeholder="Asignatura" required /></div>
+</div>
+
+<div class="form-group col-sm-4">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-book"></span>
+</span>
+<input type="text"  title="Vigencia" class="form-control input-sm" name="correo"   id="correo"   placeholder="Asignatura" required /></div>
+</div>
+
+
+
+<div class="form-group col-sm-8">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-book"></span>
+</span>
+<input type="text"  title="Vigencia" class="form-control input-sm" name="correo"   id="correo"   placeholder="Asignatura" required /></div>
+</div>
+
+
+
+
+
+<div class="form-group col-sm-4">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-book"></span>
+</span>
+<input type="text"  title="Vigencia" class="form-control input-sm" name="correo"   id="correo"   placeholder="Asignatura" required /></div>
+</div>
+
+
+
+<div class="form-group col-sm-4">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-book"></span>
+</span>
+<input type="text"  title="Vigencia" class="form-control input-sm" name="correo"   id="correo"   placeholder="Asignatura" required /></div>
+</div>
+
+
+
+
+<div class="form-group col-sm-8">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-book"></span>
+</span>
+<input type="text"  title="Vigencia" class="form-control input-sm" name="correo"   id="correo"   placeholder="Asignatura" required /></div>
+</div>
+
+-->
+
+
+
+
+<!-- BLOQUE CIERRE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+    
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+ 
+
+  </div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="datas" > 
+
+
+
+<div class="container">
+
+
+<hr>
+    <div class="row">
+
+
+
+
+
+
+
+
+        <div class="col-xs-12 col-xs-4" >
+            <div class="">
+  <center id="">
+
+ 
+
+<strong   id="" > 
+
+Nº Profesores:    
+</strong>
+
+
+ 
+
+
+
+   </center>
+ <hr> 
+            </div>
+        </div>
+      
+        <div class="col-xs-12 col-xs-4" >
+              <div class="">
+
+
+
+  <center id="">
+
+
+
+
+<strong   id="" > 
+
+Nº Infraestructura:  
+</strong>
+</center>
+ <hr> 
+            </div>
+        </div>
+       
+        <div class="col-xs-12 col-xs-4" >
+        <div class="">
+<center id="">
+
+
+
+
+<strong   id="" > 
+Nº Pensum: 
+</strong>
+</center>
+ 
+ <hr> 
+            </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+  </section>
 
 
 
@@ -624,10 +1028,19 @@ Ingenieria de sistemas
 </section>
 
 
-@extends ('layouts.seccion')
+    
 
 
-@section('seccion')@endsection
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -639,7 +1052,21 @@ Ingenieria de sistemas
   </div><!-- /.container contenedor-->
 
 
-<footer class="container-fluid col-lg-12"> 
+      <footer class="container-fluid col-lg-12"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div   class="col-lg-12  ">
 
 
@@ -651,9 +1078,17 @@ Ingenieria de sistemas
 
 </center>
 
+
+
+
+
+
 </div>
 
+
+
 </footer>
+
 
 
 

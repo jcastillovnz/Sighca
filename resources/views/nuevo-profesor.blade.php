@@ -14,13 +14,13 @@
 
     <title>Sighca</title>
 
-   <!-- Styles -->
+    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
        <link href="{{ asset('css/tecnicas.css') }}" rel="stylesheet">
-    <link href="  {{ asset('css/bootstrap.min.css') }}         " rel="stylesheet">
-<link rel="stylesheet" href="  {{ asset('css/font-awesome.min.css') }}           ">
-    <link rel="stylesheet" href="  {{ asset('css/estilos.css') }}          ">
-    <link rel="stylesheet" href=" {{ asset('css/alertify.min.css ') }}            ">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/alertify.min.css">
 
     <!-- Scripts -->
     <script>
@@ -175,6 +175,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
 
    @else
  
+
 
 
 
@@ -367,9 +368,10 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
                         @endif
 
 
-
    <script src="{{ asset('js/jquery.js   ') }}   " ></script>
     <script src="  {{ asset('js/jquery.easing.min.js   ') }}  " ></script>
+
+
 
 
 
@@ -429,73 +431,40 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-
-
 <div   id="separador"   class="separador">
 
 </div>
 
 
-
-
-
-
-<section  id="seccion"     >   
-
-<div class="container"    >
-
-
-
-
-
-
-<form role="form" action="{{ url('/busqueda') }}"
- method="GET"   >
-{{ csrf_field() }}
-<div class="form-group">
- <div class="input-group  ">
-<input type="text" id="buscar" name="buscar" class="form-control   " required=""       >
-<span class="input-group-btn   ">
-<button title="Haz una busqueda" class="btn btn-success  " type="submit"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
-</span>
-</div>
-</form> 
+<div class="container azul">
+    <ol class="breadcrumb breadcrumb-arrow ">
+    <li><a href="{{ url('/') }}">Inicio</a></li>
+    <li><a href="">Nuevo profesor </a></li>
+    
+  </ol>
 </div>
 
 
 
-<div id="main" class="wrapper row "> 
-<div class="col-md-12">
 
 
 
-
-<div class="row ">
-<div class="col-sm-12">
-
-
-
-
-
-
-<div    class="container">
+<section  id="lista-productos"     >   
+ 
   
 
 
 
 
 
-
-
-</div>
-
+    <div class="">
 
 
 
 
 
 
-
+      <div class="container"    >
 
 
 
@@ -503,94 +472,109 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-<div class="panel panel-default">
-<div  class="panel-heading">
 
 
 
-<span  style=" padding-left: 16px;  " class="text-success"  title="Estatus" style=""> 
-<i class="fa fa-calendar" aria-hidden="true"></i> Sistema de gestion y control de horarios</span>
+
+
+
+
+        <div id="main" class="wrapper row ">      
+
+
+                  <div class="col-md-12">
+
+
+
+   <div class="row ">
+            <div class="col-sm-12">
+
+
+                <div class="panel panel-default">
+ 
+
+  <div  class="panel-heading">
+
+  <span  style="padding-left: 20px;          font-size: 15px;">
+
+
+<strong><i class="fa fa-plus-circle" aria-hidden="true"></i>
+Nuevo
+profesor</strong>
+
+
 </span >
-<!-- cierre panel heading -->
-</div>
 
 
 
 
 
-<div class="panel-body ">
+
+</span >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="panel-body ">
               
 
-<div class="form-group col-sm-4">  
-<div class="well"  style="font-size: 20px;   height: 200px;">
-<center style="padding-top: 22%"   >
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Pensum
-
-</center>
-
-</div>
-</div>
+<!-- BLOQUE SECCION -->
 
 
 
-<div class="form-group col-sm-4">  
-<div class="well"  style="font-size:20px;    height: 200px;">
-<center style="padding-top: 22%"   >
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Profesores
+<div id="formulario"> 
 
-</center>
-</div>
-</div>
+<form class="navbar-form navbar-center" role="form" action="{{ url('/guardar-profesor') }}"
+ method="GET"    >{{ csrf_field() }}
 
+ </div>
 
 <div class="form-group col-sm-4">  
-<div class="well"  style="font-size: 20px;   height: 200px;">
+
+
+
+
+<div class="well"  style="font-size: 40px;   height: 255px;">
 <center style="padding-top: 22%"   >
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Infraestructura
 
-</center>
-</div>
-</div>
-
-
-<!-- Carreras -->
-
-
-
-<div class="form-group col-sm-6">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
-
-</center>
-</div>
-</div>
-
-<div class="form-group col-sm-6">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
-
-</center>
-</div>
-</div>
-
-<div class="form-group col-sm-12">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
+<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+Profesor
 
 </center>
 </div>
@@ -603,18 +587,374 @@ Ingenieria de sistemas
 
 
 
-</div><!-- cierre panel body-->
-</div><!-- cierre panel default-->
+
+<div class="form-group col-sm-4"     >
+<div class="input-group"   title="Regimen">
+<span class="input-group-addon"><span class="fa fa-user-circle-o"></span></span>
+ <input type="text"  title="Nombre" class="form-control" name="nombre"   id="nombre"   placeholder="Nombre" required />
+ </div>
+</div>
 
 
 
+
+<div class="form-group col-sm-4"    >
+ 
+                       
+<div class="input-group"   title="Regimen">
+ <span class="input-group-addon"><span class="fa fa-user-circle-o"></span></span>
+ <input type="text"  title="Apellido" class="form-control" name="apellido"   id="apellido"   placeholder="Apellido"  required />
+ </div>
+@if($errors->has('foto'))
+
+
+<center>Hubo un error</center>
+
+
+@endif
+
+
+</div>
+
+<div class="form-group col-sm-4"      >
+<div class="input-group"   title="Regimen">
+<span class="input-group-addon"><span class="fa fa-picture-o"></span></span>
+ <input type="file"  title="Foto" class="form-control" name="foto"   id="foto"   placeholder="Foto"  />
+ </div>
+
+@if($errors->has('foto'))
+
+
+<center>Hubo un error</center>
+
+
+@endif
+
+</div>
+
+
+
+
+
+<div class="form-group col-sm-4"    >
+ 
+<div class="input-group"   title="Cedula">
+<span class="input-group-addon"><span class="fa fa-id-card"></span>
+</span>
+<input type="number"  title="Cedula" class="form-control" name="cedula"   id="cedula"   placeholder="Cedula" required />
+</div>
+
+@if($errors->has('cedula'))
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+ alertify.error('  <center >  <strong> <i style="color: #dff442;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> <span style="color: #ffffff;" >  Cedula ya registrada</span> </strong>    </center>    ') ;
+
+
+});
+</script>
+
+
+
+
+
+<style type="text/css">
+  
+
+#cedula{
+
+    border: 1px solid red;
+}
+
+</style>
+
+
+
+
+
+
+@endif
+
+</div>
+
+
+
+
+<!-- Segunda fila -->
+
+ 
+<div class="form-group col-sm-4"   title="Telefono celular"  >
+<div class="input-group"  >
+<span class="input-group-addon"><span class=" fa fa-phone-square"></span></span>
+ <input type="tel"  title="Telefono celular" class="form-control" name="telefonocelular"   id="telefonocelular"   placeholder="Telefono celular" required />
+ </div>
+</div>
+
+
+
+<div class="form-group col-sm-4"   title="Telefono fijo"   >
+<div class="input-group"   title="Telefono fijo">
+<span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt    "></span></span>
+ <input type="tel"  title="Telefono fijo" class="form-control" name="telefonofijo"   id="telefonofijo"   placeholder="Telefono fijo"  />
+ </div>
+</div>
+
+
+<!-- Segunda fila -->
+
+
+<div class="form-group col-sm-4"    title="Profesion"    >
+<div class="input-group"   title="Profesion">
+<span class="input-group-addon"><span class="fa fa-graduation-cap"></span></span>
+ <input type="text"  title="Profesion" class="form-control" name="profesion"   id="profesion"   placeholder="Profesion" required />
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group col-sm-4"       >
+ 
+                       
+<div class="input-group"   title="Correo">
+ <span class="input-group-addon"><span class="fa fa-envelope"></span></span>
+ <input type="text"  class="form-control" name="correo"   id="correo"   placeholder="Correo"  required />
+ </div>
+
+</div>
+
+
+
+
+
+<div class="form-group col-sm-8"        >
+ 
+<div class="input-group"   title="Cargo">
+<span class="input-group-addon"><span class="fa fa-street-view"></span>
+</span>
+<input type="text"  title="Residencia" class="form-control input-sm" name="residencia"   id="residencia"   placeholder="Residencia" required />
 </div>
 </div>
+
+
+
+<div class="form-group col-sm-4"        >
+@if (isset($mensaje))
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+ alertify.success('  <center style="color: #fff;" > <strong> <i class="fa fa-check-circle" aria-hidden="true"></i> {{$mensaje}} </strong>    </center>    '), 'success','20'   ;
+
+});
+</script>
+
+
+
+
+
+@endif
+
+
 </div>
+
+<div class="form-group col-sm-4"        >
+ 
+
+
+<button class="btn btn-success btn-sm btn-circle pull-right     "><i class="fa fa-check-circle" aria-hidden="true"></i> Guardar</button>
 </div>
-</div>
-</div>
-</div>
+
+
+</form>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+    
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+ 
+
+  </div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="datas" > 
+
+
+
+<div class="container">
+
+
+<hr>
+    <div class="row">
+
+
+
+
+
+
+
+
+        <div class="col-xs-12 col-xs-4" >
+            <div class="">
+  <center id="">
+
+ 
+
+<strong   id="" > 
+
+Nº Profesores:    
+</strong>
+
+
+ 
+
+
+
+   </center>
+ <hr> 
+            </div>
+        </div>
+      
+        <div class="col-xs-12 col-xs-4" >
+              <div class="">
+
+
+
+  <center id="">
+
+
+
+
+<strong   id="" > 
+
+Nº Infraestructura:  
+</strong>
+</center>
+ <hr> 
+            </div>
+        </div>
+       
+        <div class="col-xs-12 col-xs-4" >
+        <div class="">
+<center id="">
+
+
+
+
+<strong   id="" > 
+Nº Pensum: 
+</strong>
+</center>
+ 
+ <hr> 
+            </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+  </section>
 
 
 
@@ -624,10 +964,19 @@ Ingenieria de sistemas
 </section>
 
 
-@extends ('layouts.seccion')
+    
 
 
-@section('seccion')@endsection
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -639,7 +988,21 @@ Ingenieria de sistemas
   </div><!-- /.container contenedor-->
 
 
-<footer class="container-fluid col-lg-12"> 
+      <footer class="container-fluid col-lg-12"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div   class="col-lg-12  ">
 
 
@@ -651,7 +1014,14 @@ Ingenieria de sistemas
 
 </center>
 
+
+
+
+
+
 </div>
+
+
 
 </footer>
 
@@ -666,19 +1036,10 @@ Ingenieria de sistemas
 
 
 
-
-
-
-
-
-
-
-
   <!-- Plugin JavaScript -->
 
-   <script src="{{ asset('js/jquery.js   ') }}   " ></script>
-    <script src="  {{ asset('js/jquery.easing.min.js   ') }}  " ></script>
- <script src="{{ asset('js/vue.js   ') }}   " ></script>
+  
+
 
   <script src="  {{ asset('js/script.js  ') }}     " ></script> 
      <script src="   {{ asset('js/alertify.js    ') }}   " ></script>

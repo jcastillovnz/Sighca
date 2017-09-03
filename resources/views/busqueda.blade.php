@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
 <link   aria-hidden="true" href="{{ asset('img/favicon.png  ') }}  "  rel="shortcut icon" >
 
 
- 
-    <title> Sighca │     </title>
-
-    <!-- Styles -->
-     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
-
+    <title>Sighca</title>
+   <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+       <link href="{{ asset('css/tecnicas.css') }}" rel="stylesheet">
+    <link href="  {{ asset('css/bootstrap.min.css') }}         " rel="stylesheet">
+<link rel="stylesheet" href="  {{ asset('css/font-awesome.min.css') }}           ">
+    <link rel="stylesheet" href="  {{ asset('css/estilos.css') }}          ">
+    <link rel="stylesheet" href=" {{ asset('css/alertify.min.css ') }}            ">
+y.min.css">
 
     <!-- Scripts -->
     <script>
@@ -27,7 +28,6 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
-
 
 
 
@@ -57,9 +57,10 @@
 
 
     
-   <a class="navbar-brand page-scroll" id="economik" align="center"  href="{{ url('/') }}"> 
+   <a class="navbar-brand page-scroll" id="titulo" align="center"  href="{{ url('/') }}"> 
+  <span class="text-info" >
 <i class="fa fa-university" aria-hidden="true"></i>
-Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  
+Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
           </a>
 
 <!-- marca -->
@@ -92,20 +93,22 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
 
 
 
-      <form class="navbar-form navbar-center">
+      <form class="navbar-form navbar-center" role="form" action="{{ url('/busqueda') }}"
+ method="GET"    >
 
-
+{{ csrf_field() }}
 
 
         <div class="form-group">
  <div class="input-group  ">
-      <input type="text" class="form-control  btn-circle ">
+      <input id="buscar" name="buscar" type="text" class="form-control  btn-circle " required=""  >
       <span class="input-group-btn   ">
-        <button title="Haz una busqueda" class="btn btn-success btn-circle " type="button"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
+     <button title="Haz una busqueda" class="btn btn-success   btn-circle" type="submit"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
       </span>
     </div>
 </form> 
 </div>
+
 
 
 
@@ -123,37 +126,10 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
 
       <ul   class="nav navbar-nav navbar-right">
 
-       
-
-   <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-
-<strong>
-                Registros</strong>
-
-                <span class=""></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Profesores</a></li>
-                  <li><a href="#">Horarios</a></li>
-                  <li><a href="#">Pensum</a></li>
-
-
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Crear registro</li>
-                  <li><a href="#">Profesor</a></li>
-                  <li><a href="#">Pensum</a></li>
-                </ul>
-              </li>
 
 
 
-<li>
 
-<a  id="linea-vertical"  href="">
-&vert;
-
-</a>
-</li>
 
 
 
@@ -169,7 +145,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
   
 </span>
 
-            Iniciar sesion  </a>
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i>           Iniciar sesion  </a>
 
 </li>
 <li>
@@ -188,7 +164,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
 </span>
 
 
-    Crear cuenta </a>
+ <i class="fa fa-user-plus" aria-hidden="true"></i>    Crear cuenta </a>
 
 </li>
 
@@ -204,28 +180,147 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
 
 
 
+
 <li>
 
 
-   <a title="Inicio"   class=""  href=" {{ url('/home') }} ">
+   <a title="Inicio"   class=""  href=" {{ url('/inicio') }} ">
 <span  class="color-naranja "     >
 
 
      
 </span>
 <strong>
-            Inicio </strong> </a>
+          <i class="fa fa-home" aria-hidden="true"></i>      Inicio </strong> </a>
 
 </li>
+
+
+
+
+
+
+
+
+ <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+         
+
+<strong>
+             <i class="fa fa-plus-square" aria-hidden="true"></i>   Añadir</strong>
+
+                <span class=""></span></a>
+                <ul class="dropdown-menu">
+
+
+
+       <li><a href="{{ url('/nueva-infraestructura') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nueva infraestructura</a></li>
+
+
+
+
+
+
+   <li><a href="{{ url('/nuevo-profesor') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nuevo profesor</a></li>
+
+
+
+
+         
+               
+                  <li><a href="{{ url('/nuevo-pensum') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nuevo  Pensum</a></li>
+
+
+       <li><a href="{{ url('/nueva-seccion') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nueva seccion</a></li>
+
+
+
+                 
+                </ul>
+              </li>
+
+
+
+<li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
 
 
 <li>
 
-<a href="" id="linea-vertical"   >
-&vert;
 
-</a>
+   <a title="Inicio"   class=""  href=" {{ url('/diseñar-horario') }} ">
+<span  class="color-naranja "     >
+
+
+     
+</span>
+<strong>
+          <i class="fa fa-calendar" aria-hidden="true"></i> Diseñar horario </strong> </a>
+
 </li>
+
+
+
+
+
+
+
+
+
+
+  <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+         
+
+<strong>
+             <i class="fa fa-thumb-tack" aria-hidden="true"></i>   Asignar</strong>
+
+                <span class=""></span></a>
+                <ul class="dropdown-menu">
+
+
+                   <li><a href="{{ url('/asignar-profesor') }}"><i class="fa fa-tag" aria-hidden="true"></i>   Asignar profesor</a></li>  
+                  
+             
+                  
+
+
+             
+                </ul>
+              </li>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -239,14 +334,14 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
 
 
   <a title="Usuario"  data-toggle="dropdown"    >
-<strong>
-{{ Auth::user()->email }} </strong>
+<strong> <i class="fa fa-suitcase" aria-hidden="true"></i>
+{{ Auth::user()->name }}  {{ Auth::user()->apellido }}   </strong>
 
  <span class="caret">  </span></button>
   <ul class="dropdown-menu">
 
 <li>
-<a href="">Configuracion</a>
+<a href="{{ url('/configuracion') }}"><i class="fa fa-cog" aria-hidden="true"></i>    Configuracion</a>
 </li>
 
 
@@ -255,7 +350,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
 
 
     <li><a title="Cerrar sesion"  class=" "   href="{{ route('logout') }}" onclick="event.preventDefault();
-document.getElementById('logout-form').submit();">Cerrar sesion   
+document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" aria-hidden="true"></i>   Cerrar sesion   
 
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -263,92 +358,19 @@ document.getElementById('logout-form').submit();">Cerrar sesion
                                         </form>
 
 </a>
-
-
 </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </ul>
-
-
-
-
-          
-
-
-
-
-              </a>
-
-
-
+</a>
 </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-                            
-
-
-
-
-
-
-
-
 
 
                         @endif
 
 
 
-
+   <script src="{{ asset('js/jquery.js   ') }}   " ></script>
+    <script src="  {{ asset('js/jquery.easing.min.js   ') }}  " ></script>
 
 
  
@@ -438,16 +460,18 @@ document.getElementById('logout-form').submit();">Cerrar sesion
 
 
 
-<form class="">
+<form         role="form" action="{{ url('/busqueda') }}"
+ method="GET"   >
+{{ csrf_field() }}
 
 
 
 
         <div class="form-group">
  <div class="input-group  ">
-      <input type="text" class="form-control   ">
+      <input type="text" id="buscar" name="buscar" class="form-control   ">
       <span class="input-group-btn   ">
-        <button title="Haz una busqueda" class="btn btn-success  " type="button"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
+        <button title="Haz una busqueda" class="btn btn-success  " type="submit"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
       </span>
     </div>
 </form> 
@@ -587,10 +611,26 @@ document.getElementById('logout-form').submit();">Cerrar sesion
 
 <div class="panel panel-default">
   <div class="panel-heading">
-                                <small>   <strong>   <i class="fa fa-eye" aria-hidden="true"></i> Usted esta viendo 1 de 10 resultados</strong>  
+
+@if (isset($message))
+
+ <small>   <strong>   <i class="fa fa-eye" aria-hidden="true"></i> Usted esta viendo 0 resultados</strong>  
                                  </small> 
-    <h4 class="pull-right">
-<i class="fa fa-bookmark azul" aria-hidden="true"></i> </h4> 
+@endif
+
+              @if (isset($profesores))
+                  <small>   <strong>   <i class="fa fa-eye" aria-hidden="true"></i> Usted esta viendo  {{ $profesores->count() }}   de {{ $profesores->count() }} resultados</strong>  
+                                 </small> 
+
+@endif
+
+
+
+
+
+                            
+    <span  style="float: right; padding-right: 20px; font-size: 17px;"  >
+<i class="fa fa-bookmark azul" aria-hidden="true"></i> </span > 
 
   </div>
 
@@ -617,14 +657,8 @@ document.getElementById('logout-form').submit();">Cerrar sesion
 
 
 
+@if (isset($message))
 
-
-
-
-
-
-
-               
 
 
 
@@ -636,13 +670,8 @@ document.getElementById('logout-form').submit();">Cerrar sesion
 
 <span class="azul">
 
-
-             
-12    <i class="fa fa-file-text" aria-hidden="true"></i>  
-
-│
-
-12/02/2017   <i class="fa fa-retweet" aria-hidden="true"></i>       
+<span style="padding-left: 16px;"  title="Id" style="font-size: 12px;" class="text-success" >
+<i class="fa fa-barcode" aria-hidden="true"></i> </span > 
 
 </span>
 
@@ -650,82 +679,269 @@ document.getElementById('logout-form').submit();">Cerrar sesion
 
 
                               
-                             
-    <h4 class="pull-right">
-<i class="fa fa-bookmark azul" aria-hidden="true"></i> </h4> 
+                            
+    <span  style="float: right; padding-right: 20px; font-size: 17px;"  >
+<i class="fa fa-bookmark azul" aria-hidden="true"></i> </span > 
 
   </div>
  
+
+
+
+
+
+
+
                     <div class="panel-body ">
               
+
+
+
+                    
+                     <div class='' style='height:  125px ;font-size:25px;'>
+
+
+  <center>  <i style="color:#f0d913; padding-top: 5%;" class="fa fa-exclamation-triangle  " aria-hidden="true"></i>      {{$message}}  <strong>{{$buscar}} </strong> </center> 
+</div>
+          </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@endif
+
+
+
+
+
+
+
+              @if (isset($profesores))
+   
+  @foreach ($profesores as $n  )  
+ 
+
+
+
+   <div class="row ">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+
+
+
+
+
+                  <div id="metadato" class="panel-heading">
+
+
+
+    <span style="padding-left: 16px;"  title="Id" style="font-size: 12px;" class="text-success" >
+<i class="fa fa-barcode" aria-hidden="true"></i> {{    $n-> id }}</span > 
+
+
+ 
+
+
+
+
+
+
+
+
+                              
+                    
+
+
+                            
+    <span  style="float: right; padding-right: 20px; font-size: 17px;"  >
+<i class="fa fa-bookmark azul" aria-hidden="true"></i> </span > 
+
+
+  </div>
+ 
+
+
+
+
+
+
+
+                    <div    class="panel-body ">
+              
+
 
 
                     
                      
                          
 
-<div id="dato"  align="left"    class="col-md-4 azul">
-<strong>
- Nombre: Jose Castillo  </strong>
+
+
+
+
+
+
+
+<div id="dato"  align="left" style="padding-left: 12%; padding-right: 12%; "   class="col-md-4 col-md-4 ">
+
+
+
+<img id="foto" class="img-responsive" alt="Foto de perfil" align="center" src="img/perfil.png" width="150"  height="300" >
+
+
+
+
+
+
   </div>
                            
   
 
-<div id="dato"   align="left"    class="col-md-4">
+
+
+
+<div style="font-size: 13px"   align="left"    class="col-md-4">
 
 <strong>
-<span >Cedula:
- 24845258</span>  </strong>
-    </div>
+<span >Nombre:     </strong>   {{    $n-> nombre }}  {{    $n-> apellido }}       </span> 
+    </div> 
 
   
-<div  id="dato" align="left"     class="col-md-4">
-<strong>
-Profesion:
- Ingeniero de sistemas
-</strong>
+<div  style="font-size: 13px"  align="left"     class="col-md-4">
+<strong>Cedula:</strong> {{    $n-> cedula }}   
+ 
+
+
+    </div>
+
+
+<div style="font-size: 13px"    align="left"    class="col-md-4">
+<strong>Telefono celular:       </strong> {{    $n-> telefonocelular }} 
+
     </div>
 
 
 
-<div id="dato"  align="left"    class="col-md-4">
-<span >
-<strong>
-Telefono:
-04141948033  
-</strong>
+<div style="font-size: 13px"    align="left"    class="col-md-4">
+<strong>Telefono fijo:       </strong> {{    $n-> telefonofijo }} 
+
+    </div>
+
+
+
+
+
+
+
+<div style="font-size: 13px"   align="left"    class="col-md-4">
+
+<strong>Profesion:    </strong>{{    $n-> profesion }} 
+
+
+
   </div>
                            
   
 
-<div id="dato"   align="left"    class="col-md-4">
-<strong>
-Correo:
-jcastillovnz@gmail.com</span></strong>
 
-    </div>
 
   
-<div  id="dato" align="left"     class="col-md-4">
+<div  style="font-size: 13px"  align="left"     class="col-md-4">
 
-<strong>
-Cargo:
-  Profesor</strong>
+<strong>Correo:   </strong>{{    $n-> correo }} 
+
+
     </div>
 
+
+<div  style="font-size: 13px"  align="left"     class="col-md-8">
+
+<strong>Residencia:</strong> {{    $n-> residencia }} 
+
+    </div>
                      
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="col-lg-12" align="right">
- <a class="btn btn-success btn-xs"    href="{{ url('/register') }}"  >  
 
-<strong><i class="fa fa-file-text-o" aria-hidden="true"></i>   Detalle  </strong>   </a>  </div>
-
+@if (Auth::guest())
 
 
 
 
+    <a class="btn btn-success btn-sm"    href="{{ url('/register') }}"  >  
+
+<strong><i class="fa fa-calendar" aria-hidden="true"></i> Detalle  </strong>   </a>  </div>
 
 
+  @else
+<a  href="{{ url('asignar-profesor', $n->id) }}" class="btn btn-default btn-sm" >
+
+<strong><i class="fa fa-calendar-o" aria-hidden="true"></i>  Asignar Horario </strong>   </a> 
+
+
+
+
+
+
+<input class="hidden" id="id" name="id" value="{{    $n-> id }}">
+
+
+
+
+
+
+
+<a  href="{{ url('detalle-profesor', $n->id) }}" class="btn btn-success btn sm">
+
+
+<i class="fa fa-calendar" aria-hidden="true"></i> 
+{{ csrf_field() }}
+Detalle  
+
+
+</a>  
+
+
+</div>
+
+@endif
 
 
 
@@ -734,21 +950,34 @@ Cargo:
 
 
                         </div>
+
+
+                    </div>
+
+
+
+
+
+
+
+
                     </div>
 
 
 
 
-
-
-
-                    </div>
                 </div>
+
+
+        @endforeach  
+@endif
+
+
             </div>
     
 
 
-
+                
 
      
 
@@ -937,26 +1166,26 @@ Nº Pensum:
 
 
 
-
 <div   class="col-lg-12  ">
 
- <p  >
+
 
 
 <center>
 <hr>
 
-<h5 id="pie"    >   © 2017  Desarrollado por <a><i class="fa fa-code" aria-hidden="true"></i>  Jose Castillo</a>  | <a  href="{{ url('/contacto') }}"  > <i class="fa fa-phone-square" aria-hidden="true"></i>  Contactanos  </a>| <a href="https://www.economik.com.ve"> <i class="fa fa-globe" aria-hidden="true"></i>  Economik.com.ve   </a>  un emprendimiento e-commerce, radicados en la <strong>ciudad de El Tigre</strong> , estado Anzoategui   </h5> 
-<hr>
+<h5 id="pie"    >   © Desarrollado por <a><i class="fa fa-code" aria-hidden="true"></i>  Jose Castillo, Leonellys Rojas  </a>   | <a href="https://www.economik.com.ve"> <i class="fa fa-globe" aria-hidden="true"></i>  Sighca </a>  Como solucion a nuestro caso de trabajo especial de grado. UNEFA, San Tome, 2017  </h5> 
+
 </center>
 
 
-</p>
+
 
 </div>
 
 
 
+</footer>
 
 
 

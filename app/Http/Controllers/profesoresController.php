@@ -1,16 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Profesor;
 use Illuminate\Http\Request;
-use Image;
-use App\Producto;
-use Illuminate\Support\Facades\Storage;
-
-
-
-
-
 
 class ProfesoresController extends Controller
 {
@@ -19,186 +11,102 @@ class ProfesoresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function guardar(Request $request )
     {
-      
-
- return view('/busqueda');
-
-        //
-
-    }
-
-
- public function perfil()
-    {
-      
-
- return view('/profesor');
-
-        //
-
-    }
 
 
 
-
-    public function busqueda()
-    {
-      
-
-//$productos= profesores ::where ('primernombre','=','1')->get(['id','primernombre','segundonombre','primerapellido','segundoapellido', 'cedula','foto','profesion','telefono','correo' ,'cargo' , ]);
-
-//{
-
-
-
-//return view ('productos/power-bank-samsung-2600-mah',compact('productos') );
-
-//}
-
-
-
- return view('/busqueda');
+ $this->validate($request, [
+        'nombre' => 'required|max:100',
+        'apellido' => 'required|max:100',
+         'cedula' => 'required|max:100|unique:profesor,cedula' ,
+        'telefonocelular' => 'max:50',
+         'telefonofijo' => 'max:50',
+           'profesion' => 'max:100',
+        'correo' => 'max:50',
+        'residencia' => 'max:100',
+    ]);
 
 
 
 
 
+
+
+ 
+$profesor = new Profesor  ();
+$profesor ->nombre= $request ->nombre;
+$profesor ->apellido= $request ->apellido;
+$profesor ->foto= $request ->foto;
+$profesor->cedula= $request ->cedula;
+$profesor ->telefonocelular= $request ->telefonocelular;
+$profesor ->telefonofijo= $request ->telefonofijo;
+$profesor ->profesion= $request ->profesion;
+$profesor ->correo= $request ->correo;
+$profesor ->residencia= $request ->residencia;
+$profesor-> save();
+
+
+
+return view ('nuevo-profesor' )
+->with('mensaje', 'Guardado exitosamente');
 
 
 
         //
-
     }
-
-
-
-
-
-  public function registro()
-    {
-      
-
- return view('productos/registro-de-producto');
-
-        //
-
-    }
-
-
-
-
-
-
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function guardar(Request $request)
+
+   public function nuevo()
     {
-        
 
-
-//dd($request ->estado );
-
-
-        $this->validate($request,[
-            'titulo'=>'required',
-            'estado'=>'required',
-
-               'precio'=>'required',
-// *********************************************///
-//IMAGENES
-
-             
-     //       'imagen1'=>'required' ,
-         //     'imagen2'=>'required' ,
-     //         'imagen3'=>'required' ,
-      //        'imagen4'=>'required' ,
-     //       'imagen5'=>'required' ,
-        //    'imagen6'=>'required' ,   *//
-
-// *********************************************///
-//DESCRIPCIONES
-   'descripcion1'=>'required' ,
-   'descripcion1'=>'required' ,
-   'descripcion2'=>'required' ,
-   'descripcion3'=>'required' ,
-   'descripcion4'=>'required' ,
-   'descripcion5'=>'required' ,
-   'masinformacion'=>'required' ]);
-
-
-
-
-
-
-
-
-
-
-$producto = new Producto  ();
-$producto->titulo= $request ->titulo;
-$producto->estado= $request ->estado;
-$producto->precio= $request ->precio;
-
-// *********************************************///
-//IMAGENES
-
-
-
-$img=$request->file('imagen1');
-
-$file_route = time().'_' .$img->  getClientoriginalname   ();
-
-//storage::disk ('imgProducto')->put( $file_route, file_get_contents($img->getRealpath())  );
-Storage::disk('local')->put($file_route, file_get_contents($img->getRealpath()) );
-
-
-$producto->imagen1= $file_route;
-$producto->imagen2= $file_route;
-$producto->imagen3= $file_route;
-$producto->imagen4= $file_route;
-$producto->imagen5= $file_route;
-$producto->imagen6= $file_route;
-
-// *********************************************///
-//DESCRIPCIONES
-$producto->descripcion1= $request ->descripcion1;
-$producto->descripcion2= $request ->descripcion2;
-$producto->descripcion3= $request ->descripcion3;
-$producto->descripcion4= $request ->descripcion4;
-$producto->descripcion5= $request ->descripcion5;
-$producto->masinformacion= $request ->masinformacion;
-
-
-
-
-
-
-
-
-
-
-
-
-$producto-> save();
-
-dd ('datos guardados');
-
-
-
-
-
-
-
-
-
+return View('/nuevo-profesor' );
         //
     }
+
+
+
+
+
+
+
+
+
+
+ public function asignar($id)
+    {
+
+
+
+         $profesores= profesor::findOrFail ($id);
+return view ('/asignar-profesor',compact('profesores') );
+        //
+    }
+
+
+
+
+
+
+    public function index()
+    {
+return View('/asignar-profesor' );
+        //
+    }
+
+
+
+
+
+
+
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -206,17 +114,40 @@ dd ('datos guardados');
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+  public function busqueda (Request $request){
+
+
+
+  $buscar=$request->buscar;
+
+        $buscar = urldecode($buscar);
+        $profesores = profesor::select()
+
+
+               /// ->where('nombre', 'LIKE', '%'.$buscar.'%')
+->where('nombre','LIKE', '%'.$buscar.'%')  ->orWhere    ('apellido', 'LIKE','%'.$buscar.'%') 
+->orWhere    ('cedula', 'LIKE','%'.$buscar.'%')
+
+                ->orderBy('id', 'desc')
+                ->get();
+        
+        if (count($profesores) == 0){
+            return View('/busqueda')
+            ->with('message', 'No existen resultados para  ')
+            ->with('buscar', $buscar);
+        } else{
 
 
 
 
+            return View('/busqueda',compact('profesores') );
+   
 
 
 
+        }
 
-        //
+
     }
 
     /**
@@ -225,8 +156,21 @@ dd ('datos guardados');
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function mostrar( $id)
     {
+
+        
+        
+ $profesores= profesor::findOrFail ($id);
+
+
+
+
+return view ('/detalle-profesor',compact('profesores') );
+   
+
+
+
         //
     }
 

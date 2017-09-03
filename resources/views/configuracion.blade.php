@@ -14,13 +14,13 @@
 
     <title>Sighca</title>
 
-   <!-- Styles -->
+    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
        <link href="{{ asset('css/tecnicas.css') }}" rel="stylesheet">
-    <link href="  {{ asset('css/bootstrap.min.css') }}         " rel="stylesheet">
-<link rel="stylesheet" href="  {{ asset('css/font-awesome.min.css') }}           ">
-    <link rel="stylesheet" href="  {{ asset('css/estilos.css') }}          ">
-    <link rel="stylesheet" href=" {{ asset('css/alertify.min.css ') }}            ">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/alertify.min.css">
 
     <!-- Scripts -->
     <script>
@@ -175,6 +175,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
 
    @else
  
+
 
 
 
@@ -373,6 +374,8 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
+
+
  
             </ul>
           </div><!--/.nav-collapse -->
@@ -431,54 +434,73 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
+
 <div   id="separador"   class="separador">
 
 </div>
 
 
-
-
-
-
-<section  id="seccion"     >   
-
-<div class="container"    >
-
-
-
-
-
-
-<form role="form" action="{{ url('/busqueda') }}"
- method="GET"   >
-{{ csrf_field() }}
-<div class="form-group">
- <div class="input-group  ">
-<input type="text" id="buscar" name="buscar" class="form-control   " required=""       >
-<span class="input-group-btn   ">
-<button title="Haz una busqueda" class="btn btn-success  " type="submit"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
-</span>
-</div>
-</form> 
+<div class="container azul">
+    <ol class="breadcrumb breadcrumb-arrow ">
+    <li><a href="{{ url('/') }}">Inicio</a></li>
+    <li><a href="">Configuracion </a></li>
+    
+  </ol>
 </div>
 
 
 
-<div id="main" class="wrapper row "> 
-<div class="col-md-12">
 
-
-
-
-<div class="row ">
-<div class="col-sm-12">
-
+<section  id="lista-productos"     >   
+ 
+  
 
 
 
 
 
-<div    class="container">
+    <div class="">
+
+
+
+
+
+
+      <div class="container"    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="main" class="wrapper row ">      
+
+
+
+
+
+
   
 
 
@@ -487,7 +509,8 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-</div>
+
+                  <div class="col-md-12">
 
 
 
@@ -503,95 +526,89 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-<div class="panel panel-default">
-<div  class="panel-heading">
 
 
 
-<span  style=" padding-left: 16px;  " class="text-success"  title="Estatus" style=""> 
-<i class="fa fa-calendar" aria-hidden="true"></i> Sistema de gestion y control de horarios</span>
-</span >
-<!-- cierre panel heading -->
-</div>
+               
+
+
+
+   <div class="row ">
+            <div class="col-sm-12">
 
 
 
 
 
-<div class="panel-body ">
+
+
+
+
+
+
+                <div class="panel panel-default">
+ 
+
+  <div  class="panel-heading ">
+
+
+
+
+
+
+
+
+<span  style="padding-left: 16px;  padding-left: 20px;    "   >
+
+
+
+
+
+<button type="button" class="btn btn-lg btn-warning btn-xs " data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" > <i class="fa fa-question-circle-o" aria-hidden="true"></i>  Ayuda</button>
+</span>
+
+
+
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="panel-body ">
               
 
-<div class="form-group col-sm-4">  
-<div class="well"  style="font-size: 20px;   height: 200px;">
-<center style="padding-top: 22%"   >
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Pensum
-
-</center>
-
-</div>
-</div>
 
 
 
 <div class="form-group col-sm-4">  
-<div class="well"  style="font-size:20px;    height: 200px;">
-<center style="padding-top: 22%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Profesores
-
-</center>
-</div>
-</div>
-
-
-<div class="form-group col-sm-4">  
-<div class="well"  style="font-size: 20px;   height: 200px;">
-<center style="padding-top: 22%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Infraestructura
-
-</center>
-</div>
-</div>
-
-
-<!-- Carreras -->
 
 
 
-<div class="form-group col-sm-6">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
+<div class="well"    style=" height: 255px;">
+<center style="padding-top: 25%"   >
 
-</center>
-</div>
-</div>
 
-<div class="form-group col-sm-6">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
-
-</center>
-</div>
-</div>
-
-<div class="form-group col-sm-12">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
-
+<i class="fa fa-cog fa-spin fa-3x fa-fw" style="font-size: 40px;" aria-hidden="true"></i>
+<span style="font-size: 30px;"      >
+Configuracion
+</span>
 </center>
 </div>
 </div>
@@ -603,18 +620,245 @@ Ingenieria de sistemas
 
 
 
-</div><!-- cierre panel body-->
-</div><!-- cierre panel default-->
+<div class="form-group col-sm-8"><center>
+<button class="btn btn-default btn-sm btn-block"><i class="fa fa-user-circle-o" aria-hidden="true"></i>  Mi cuenta</button></center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group col-sm-8"><center>
+<button class="btn btn-default btn-sm btn-block"><i class="fa fa-get-pocket" aria-hidden="true"></i> Permiso de acceso</button></center>
+</div>
+
+
+
+<div class="form-group col-sm-8"><center>
+<button class="btn btn-default btn-sm btn-block"><i class="fa fa-book" aria-hidden="true"></i> Documentacion</button></center>
+</div>
+
+
+
+
+<div class="form-group col-sm-8"><center>
+<button class="btn btn-default btn-sm btn-block"><i class="fa fa-file-code-o" aria-hidden="true"></i>  Codigo fuente</button></center>
+</div>
+
+
+
+
+
+
+
+<div class="form-group col-sm-8"><center>
+<button class="btn btn-default btn-sm btn-block"><i class="fa fa-download" aria-hidden="true"></i>  Base de datos</button></center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+    
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+ 
+
+  </div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="datas" > 
+
+
+
+<div class="container">
+
+
+<hr>
+    <div class="row">
+
+
+
+
+
+
+
+
+        <div class="col-xs-12 col-xs-4" >
+            <div class="">
+  <center id="">
+
+ 
+
+<strong   id="" > 
+
+Nº Profesores:    
+</strong>
+
+
+ 
+
+
+
+   </center>
+ <hr> 
+            </div>
+        </div>
+      
+        <div class="col-xs-12 col-xs-4" >
+              <div class="">
+
+
+
+  <center id="">
+
+
+
+
+<strong   id="" > 
+
+Nº Infraestructura:  
+</strong>
+</center>
+ <hr> 
+            </div>
+        </div>
+       
+        <div class="col-xs-12 col-xs-4" >
+        <div class="">
+<center id="">
+
+
+
+
+<strong   id="" > 
+Nº Pensum: 
+</strong>
+</center>
+ 
+ <hr> 
+            </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+  </section>
 
 
 
@@ -624,10 +868,19 @@ Ingenieria de sistemas
 </section>
 
 
-@extends ('layouts.seccion')
+    
 
 
-@section('seccion')@endsection
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -639,7 +892,21 @@ Ingenieria de sistemas
   </div><!-- /.container contenedor-->
 
 
-<footer class="container-fluid col-lg-12"> 
+      <footer class="container-fluid col-lg-12"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div   class="col-lg-12  ">
 
 
@@ -651,9 +918,17 @@ Ingenieria de sistemas
 
 </center>
 
+
+
+
+
+
 </div>
 
+
+
 </footer>
+
 
 
 

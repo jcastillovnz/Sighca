@@ -1,18 +1,10 @@
 <?php
-
+use App\Seccion;
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Producto;
-
-
-
-
-
-
-
-class BienvenidaController extends Controller
+class SeccionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,15 +15,7 @@ class BienvenidaController extends Controller
     {
 
 
-
-
-
-
-
-
-return view ('/welcome' );
-
-
+return View('/nueva-seccion' );
 
 
         //
@@ -53,9 +37,46 @@ return view ('/welcome' );
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function guardar(Request $request)
     {
-        //
+
+
+
+
+
+
+if   (isset ( $request ->numeroseccion )) {
+
+
+ $this->validate($request, [
+ 
+        'prefijoseccion' => 'required|max:100',
+        'carrera' => 'max:100',
+        'semestre' => 'max:100',
+        'numeroseccion' => 'max:20',
+    ]);
+
+
+
+
+ return view ('nueva-seccion' )
+
+  ->with('numeroseccion',$request ->numeroseccion)
+    ->with('carrera',$request ->carrera)
+    ->with('semestre',$request ->semestre)
+->with('prefijoseccion',$request ->prefijoseccion)
+  ;
+
+}
+
+
+
+
+
+
+
+
+
     }
 
     /**

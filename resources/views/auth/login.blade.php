@@ -15,7 +15,7 @@
 
 
 
-    <title>{{ config('economik', 'Economik tu tienda en linea') }}</title>
+    <title>Sighca</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -32,7 +32,7 @@
 <body>
 <style type="text/css">
 
-#economik-login{
+#login{
 
 
     font-size: 33px;
@@ -41,7 +41,7 @@
 
 
 body {
-  padding-top: 9%;
+ padding-top: 10%;
   padding-bottom: 40px;
   background-color: #fff;
 }
@@ -94,7 +94,7 @@ body {
                         {{ csrf_field() }}
 
 
- <did  id="economik-login"   > 
+ <did  id="login"   > 
 <center  >
 <strong   >
   
@@ -203,7 +203,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </h5>
            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordar mas tarde
           </label>
         </div>
-        <button class="btn btn-lg btn-success btn-block" type="submit">Entrar</button>
+        <button class="btn btn-lg btn-success btn-block" type="submit"> <i class="fa fa-sign-in" aria-hidden="true"></i>    Entrar</button>
 
 
 
@@ -219,8 +219,8 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </h5>
 
 <div align="center"      class="form-group "  >
                            
-                              <a class="btn  btn-block" href="{{ route('register') }}">
-                                    Crear una nueva cuenta
+                              <a class="btn btn-default btn-lg  btn-block" href="{{ route('register') }}">
+                               <i class="fa fa-id-badge" aria-hidden="true"></i>     Crea una nueva cuenta
                                 </a>
 </div>
 

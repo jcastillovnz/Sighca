@@ -180,6 +180,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
 
 
 
+
 <li>
 
 
@@ -368,6 +369,7 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
+
    <script src="{{ asset('js/jquery.js   ') }}   " ></script>
     <script src="  {{ asset('js/jquery.easing.min.js   ') }}  " ></script>
 
@@ -425,16 +427,18 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-
-
-
-
-
-
 <div   id="separador"   class="separador">
 
 </div>
 
+
+<div class="container azul">
+    <ol class="breadcrumb breadcrumb-arrow ">
+    <li><a href="{{ url('/') }}">Inicio</a></li>
+    <li><a href="">Nueva seccion </a></li>
+    
+  </ol>
+</div>
 
 
 
@@ -449,18 +453,6 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-<form role="form" action="{{ url('/busqueda') }}"
- method="GET"   >
-{{ csrf_field() }}
-<div class="form-group">
- <div class="input-group  ">
-<input type="text" id="buscar" name="buscar" class="form-control   " required=""       >
-<span class="input-group-btn   ">
-<button title="Haz una busqueda" class="btn btn-success  " type="submit"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
-</span>
-</div>
-</form> 
-</div>
 
 
 
@@ -503,14 +495,18 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
+
 <div class="panel panel-default">
 <div  class="panel-heading">
 
 
 
-<span  style=" padding-left: 16px;  " class="text-success"  title="Estatus" style=""> 
-<i class="fa fa-calendar" aria-hidden="true"></i> Sistema de gestion y control de horarios</span>
-</span >
+<span  style=" padding-left: 20px;  " class="text-success"  title="Estatus" style=""> 
+
+
+<strong>
+<i class="fa fa-bookmark" aria-hidden="true"></i> Nueva seccion</strong></span>
+
 <!-- cierre panel heading -->
 </div>
 
@@ -519,82 +515,227 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 <div class="panel-body ">
+
+<div id="formulario"> 
+
+<form class="navbar-form navbar-center" role="form" action="{{ url('/guardar-seccion') }}"
+ method="GET"    >{{ csrf_field() }}
+
+ </div>
+
+
+
+
+
+
               
-
-<div class="form-group col-sm-4">  
-<div class="well"  style="font-size: 20px;   height: 200px;">
-<center style="padding-top: 22%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Pensum
-
-</center>
-
-</div>
-</div>
+@if (empty($numeroseccion))
 
 
 
 <div class="form-group col-sm-4">  
-<div class="well"  style="font-size:20px;    height: 200px;">
+<div class="well"  style="font-size: 40px;   height: 255px;">
 <center style="padding-top: 22%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Profesores
+<i class="fa fa-bookmark" aria-hidden="true"></i>
+Seccion
 
 </center>
+
 </div>
 </div>
+
+
+
+<div class="form-group col-sm-8">
+
+<script>
+function myFunction() {
+    var x = document.getElementById("prefijoseccion");
+    x.value = x.value.toUpperCase();
+}
+</script>
+
+
+<div class="input-group">
+<span class="input-group-addon"  title="Prefijo de seccion" ><span class="fa fa-bookmark"></span>
+</span>
+<input type="text"  class="form-control" name="prefijoseccion"   id="prefijoseccion" placeholder="Prefijo de seccion Ejemplo:A" onkeyup="myFunction()"  required />
+</div> 
+</div>
+
+
+
+
+
+
+
+
+
+<div class="form-group col-sm-8">
+ <div class="input-group"   title="Carrera">
+<span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+</span>
+<select  id="carrera" name="carrera" class="form-control form-control-lg" >
+<option   selected="">Carrera</option>
+<option value="Ingenieria de sistemas - Regimen: diurno - Pensum: 2010">Ingenieria de sistemas - Regimen: diurno - Pensum: 2010</option>
+<option value="Telecomunicaciones - Regimen: diurno - Pensum: 2010">Telecomunicaciones - Regimen: diurno - Pensum: 2010</option>
+       
+</select>
+</div>
+</div>
+
+
+
+
+
+<div class="form-group col-sm-8">
+<div class="input-group">
+<span class="input-group-addon"  title="Semestre" ><i class="fa fa-filter" aria-hidden="true"></i>
+</span>
+<select  id="semestre" name="semestre" class="form-control form-control-lg" >
+<option value="" selected="">Semestre</option>
+<option value="1er - Semestre Telecomunicaciones - Regimen: diurno - Pensum: 2010 ">1</option>
+<option value="1er - Semestre Telecomunicaciones - Regimen: diurno - Pensum: 2010 ">2</option>
+<option value="1er - Semestre Telecomunicaciones - Regimen: diurno - Pensum: 2010 ">3</option>
+<option value="1er - Semestre Telecomunicaciones - Regimen: diurno - Pensum: 2010 ">4</option>
+<option value="1er - Semestre Telecomunicaciones - Regimen: diurno - Pensum: 2010 ">5</option>
+<option value="1er - Semestre Telecomunicaciones - Regimen: diurno - Pensum: 2010 ">6</option>
+<option value="1er - Semestre Telecomunicaciones - Regimen: diurno - Pensum: 2010 ">7</option>
+<option value="1er - Semestre Telecomunicaciones - Regimen: diurno - Pensum: 2010 ">8</option>
+
+       
+</select>
+</div> 
+</div>
+
+
+<div class="form-group col-sm-8">
+<div class="input-group" title="Numero de secciones"  >
+<span class="input-group-addon"   ><i class="fa fa-hashtag" aria-hidden="true"></i>
+</span>
+<input type="number" min="1" max="42" class="form-control" name="numeroseccion"   id="numeroseccion"   placeholder="Numero de secciones" required />
+</div> 
+</div>
+
+
+<div class="form-group col-sm-12">
+<button type="submit" class="btn btn-success btn-sm btn-circle  pull-right"  > <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>  Continuar   </button>
+</div>
+
+
+
+
+
+
+
+
+@endif
+
+
+
+
+
+
+@if (isset($numeroseccion))
+
 
 
 <div class="form-group col-sm-4">  
-<div class="well"  style="font-size: 20px;   height: 200px;">
+<div class="well"  style="font-size: 40px;   height: 255px;">
 <center style="padding-top: 22%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Infraestructura
-
-</center>
-</div>
-</div>
-
-
-<!-- Carreras -->
-
-
-
-<div class="form-group col-sm-6">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
+<i class="fa fa-bookmark" aria-hidden="true"></i>
+Seccion   
 
 </center>
+
 </div>
 </div>
 
-<div class="form-group col-sm-6">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
 
+
+<div class="form-group col-sm-4">
+<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+<strong>
+Carrera:</strong> Ingenieria de Sistemas
+
+</div>
+<div class="form-group col-sm-4">
 <i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
+<strong>
+Pensum:</strong> 2010
 
-</center>
-</div>
 </div>
 
-<div class="form-group col-sm-12">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
+<div class="form-group col-sm-4">
+<i class="fa fa-hourglass-start" aria-hidden="true"></i>
+<strong>
+Regimen:</strong> Diurno
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
+</div>
 
-</center>
+
+
+
+
+
+
+<div class="form-group col-sm-4">
+<i class="fa fa-calendar" aria-hidden="true"></i>
+<strong>
+Semestre:</strong> 1
+
 </div>
+
+
+<div class="form-group col-sm-8" style="padding-top: 50px;">
+
+<p class="text-success" align="center" style="font-size: 20px"><strong>
+<i class="fa fa-bookmark" aria-hidden="true"></i> Secciones creadas</strong></p>
+@for($i = 0; $i < $numeroseccion; $i++)
+
+
+<div align="center"  class="form-group btn-group  ">
+
+
+
+
+<span class="btn btn-success btn-lg">{{$prefijoseccion}}    {{$i+1}}
+   </span>
+
+
+
+
 </div>
+
+@endfor
+
+
+
+
+
+</div>
+
+
+<div class="form-group col-sm-12">
+<button type="submit" class="btn btn-success btn-sm btn-circle  pull-right"  > <i class="fa fa-check-circle" aria-hidden="true"></i>  Guardar  </button>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@endif
 
 
 
@@ -624,10 +765,132 @@ Ingenieria de sistemas
 </section>
 
 
-@extends ('layouts.seccion')
 
 
-@section('seccion')@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="datas" > 
+
+
+
+<div class="container">
+
+
+<hr>
+    <div class="row">
+
+
+
+
+
+
+
+
+        <div class="col-xs-12 col-xs-4" >
+            <div class="">
+  <center id="">
+
+ 
+
+<strong   id="" > 
+
+Nº Profesores:    
+</strong>
+
+
+ 
+
+
+
+   </center>
+ <hr> 
+            </div>
+        </div>
+      
+        <div class="col-xs-12 col-xs-4" >
+              <div class="">
+
+
+
+  <center id="">
+
+
+
+
+<strong   id="" > 
+
+Nº Infraestructura:  
+</strong>
+</center>
+ <hr> 
+            </div>
+        </div>
+       
+        <div class="col-xs-12 col-xs-4" >
+        <div class="">
+<center id="">
+
+
+
+
+<strong   id="" > 
+Nº Pensum: 
+</strong>
+</center>
+ 
+ <hr> 
+            </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -639,7 +902,21 @@ Ingenieria de sistemas
   </div><!-- /.container contenedor-->
 
 
-<footer class="container-fluid col-lg-12"> 
+      <footer class="container-fluid col-lg-12"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div   class="col-lg-12  ">
 
 
@@ -651,9 +928,17 @@ Ingenieria de sistemas
 
 </center>
 
+
+
+
+
+
 </div>
 
+
+
 </footer>
+
 
 
 

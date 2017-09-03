@@ -12,14 +12,14 @@
 <link   aria-hidden="true" href="{{ asset('img/favicon.png  ') }}  "  rel="shortcut icon" >
 
 
- 
-    <title> Sighca │     </title>
-
-    <!-- Styles -->
-     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
-
+    <title>Sighca</title>
+   <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+       <link href="{{ asset('css/tecnicas.css') }}" rel="stylesheet">
+    <link href="  {{ asset('css/bootstrap.min.css') }}         " rel="stylesheet">
+<link rel="stylesheet" href="  {{ asset('css/font-awesome.min.css') }}           ">
+    <link rel="stylesheet" href="  {{ asset('css/estilos.css') }}          ">
+    <link rel="stylesheet" href=" {{ asset('css/alertify.min.css ') }}            ">
 
     <!-- Scripts -->
     <script>
@@ -33,17 +33,8 @@
 
 
 
-
 <body id="page-top" data-target="navbar-fixed-top">
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -65,9 +56,10 @@
 
 
     
-   <a class="navbar-brand page-scroll" id="economik" align="center"  href="{{ url('/') }}"> 
+   <a class="navbar-brand page-scroll" id="titulo" align="center"  href="{{ url('/') }}"> 
+  <span class="text-info" >
 <i class="fa fa-university" aria-hidden="true"></i>
-Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  
+Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
           </a>
 
 <!-- marca -->
@@ -94,18 +86,23 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
       </ul>
 
 
+<ul  class="nav navbar-nav navbar-center">
+  
 
 
-      <form class="navbar-form navbar-left">
 
 
+      <form class="navbar-form navbar-center" role="form" action="{{ url('/busqueda') }}"
+ method="GET"    >
+
+{{ csrf_field() }}
 
 
         <div class="form-group">
  <div class="input-group  ">
-      <input type="text" class="form-control btn-circle ">
+      <input id="buscar" name="buscar" type="text" class="form-control  btn-circle " required=""  >
       <span class="input-group-btn   ">
-        <button title="Busca un articulo" class="btn btn-success btn-circle " type="button"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
+     <button title="Haz una busqueda" class="btn btn-success   btn-circle" type="submit"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
       </span>
     </div>
 </form> 
@@ -117,9 +114,25 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
 
 
 
+
+</ul>
+
+
+
+
+
+
+
       <ul   class="nav navbar-nav navbar-right">
 
-       
+
+
+
+
+
+
+
+
 @if (Auth::guest())
      
 
@@ -131,7 +144,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
   
 </span>
 
-            Iniciar sesion  </a>
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i>           Iniciar sesion  </a>
 
 </li>
 <li>
@@ -150,7 +163,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
 </span>
 
 
-    Crear cuenta </a>
+ <i class="fa fa-user-plus" aria-hidden="true"></i>    Crear cuenta </a>
 
 </li>
 
@@ -166,28 +179,147 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
 
 
 
+
 <li>
 
 
-   <a title="Inicio"   class=""  href=" {{ url('/home') }} ">
+   <a title="Inicio"   class=""  href=" {{ url('/inicio') }} ">
 <span  class="color-naranja "     >
 
 
      
 </span>
 <strong>
-            Inicio </strong> </a>
+          <i class="fa fa-home" aria-hidden="true"></i>      Inicio </strong> </a>
 
 </li>
+
+
+
+
+
+
+
+
+ <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+         
+
+<strong>
+             <i class="fa fa-plus-square" aria-hidden="true"></i>   Añadir</strong>
+
+                <span class=""></span></a>
+                <ul class="dropdown-menu">
+
+
+
+       <li><a href="{{ url('/nueva-infraestructura') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nueva infraestructura</a></li>
+
+
+
+
+
+
+   <li><a href="{{ url('/nuevo-profesor') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nuevo profesor</a></li>
+
+
+
+
+         
+               
+                  <li><a href="{{ url('/nuevo-pensum') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nuevo  Pensum</a></li>
+
+
+       <li><a href="{{ url('/nueva-seccion') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nueva seccion</a></li>
+
+
+
+                 
+                </ul>
+              </li>
+
+
+
+<li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
 
 
 <li>
 
-<a href="" id="linea-vertical"   >
-&vert;
 
-</a>
+   <a title="Inicio"   class=""  href=" {{ url('/diseñar-horario') }} ">
+<span  class="color-naranja "     >
+
+
+     
+</span>
+<strong>
+          <i class="fa fa-calendar" aria-hidden="true"></i> Diseñar horario </strong> </a>
+
 </li>
+
+
+
+
+
+
+
+
+
+
+  <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+         
+
+<strong>
+             <i class="fa fa-thumb-tack" aria-hidden="true"></i>   Asignar</strong>
+
+                <span class=""></span></a>
+                <ul class="dropdown-menu">
+
+
+                   <li><a href="{{ url('/asignar-profesor') }}"><i class="fa fa-tag" aria-hidden="true"></i>   Asignar profesor</a></li>  
+                  
+             
+                  
+
+
+             
+                </ul>
+              </li>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -201,14 +333,14 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
 
 
   <a title="Usuario"  data-toggle="dropdown"    >
-<strong>
-{{ Auth::user()->email }} </strong>
+<strong> <i class="fa fa-suitcase" aria-hidden="true"></i>
+{{ Auth::user()->name }}  {{ Auth::user()->apellido }}   </strong>
 
  <span class="caret">  </span></button>
   <ul class="dropdown-menu">
 
 <li>
-<a href="">Configuracion</a>
+<a href="{{ url('/configuracion') }}"><i class="fa fa-cog" aria-hidden="true"></i>    Configuracion</a>
 </li>
 
 
@@ -217,7 +349,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>
 
 
     <li><a title="Cerrar sesion"  class=" "   href="{{ route('logout') }}" onclick="event.preventDefault();
-document.getElementById('logout-form').submit();">Cerrar sesion   
+document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" aria-hidden="true"></i>   Cerrar sesion   
 
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -225,91 +357,20 @@ document.getElementById('logout-form').submit();">Cerrar sesion
                                         </form>
 
 </a>
-
-
 </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </ul>
-
-
-
-
-          
-
-
-
-
-              </a>
-
-
-
+</a>
 </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-                            
-
-
-
-
-
-
-
-
 
 
                         @endif
 
 
 
+
+   <script src="{{ asset('js/jquery.js   ') }}   " ></script>
+    <script src="  {{ asset('js/jquery.easing.min.js   ') }}  " ></script>
 
 
 
@@ -1151,9 +1212,6 @@ Nº Pensum:
 
 
   <!-- Plugin JavaScript -->
-   <script src="{{ asset('js/jquery.js   ') }}   " ></script>
-    <script src="  {{ asset('js/jquery.easing.min.js   ') }}  " ></script>
-
 
   <script src="  {{ asset('js/script.js  ') }}     " ></script> 
      <script src="   {{ asset('js/alertify.js    ') }}   " ></script>

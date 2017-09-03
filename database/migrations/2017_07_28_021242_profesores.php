@@ -13,32 +13,33 @@ class Profesores extends Migration
      */
     public function up()
     {
+        
 
 
-       Schema:: create('profesores', function (Blueprint $table) {
+       Schema:: create('profesor', function (Blueprint $table) {
  $table->increments('id');
- $table->string('primernombre');
-  $table->string('segundonombre')->nullable();
- $table->string('primerapellido');
-  $table->string('segundoapellido')->nullable();
-$table->string('cedula')->unique;
-$table->string('foto');
+ $table->string('nombre');
+ $table->string('apellido');
+ $table->string('foto')->nullable();
+$table->string('cedula')->unique();
+
+
+$table->string('telefonocelular')->nullable();
+$table->string('telefonofijo')->nullable();
+
 $table->string('profesion');
-$table->string('telefono');
+
 $table->string('correo');
-$table->string('cargo');
-
-$table->string('codigo')->unique;
-
-   
-
-
+$table->string('residencia')->nullable();
  $table->timestamps();
 
+ });
 
 
 
-    });
+
+
+
 
 
 

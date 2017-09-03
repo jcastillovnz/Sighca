@@ -12,41 +12,54 @@
 */
 
 
-///indexa 
-Route::resource ('/','BienvenidaController' );
-
-Route::resource ('/busqueda','profesoresController' );
-
-Route::get ('/profesor','profesoresController@perfil' );
-
-
-Route::get ('/registro-de-producto','productosController@registro' );
-
-Route::post('/registro-de-producto','productosController@guardar' );
+//RUTA BIENVENIDA
+Route::resource ('/','SistemaController' );
 
 
 
 
+//RUTAS PROFESOR 
+Route::get ('/nuevo-profesor','ProfesoresController@nuevo' );
+Route::get ('/busqueda','ProfesoresController@busqueda' );
+Route::get('/guardar-profesor','ProfesoresController@guardar' );
+Route::get ('/profesor','ProfesoresController@perfil' );
+Route::get('/asignar-profesor','ProfesoresController@index' );
+Route::get('/asignar-profesor/{id}','ProfesoresController@asignar' );
+Route::get ('/detalle-profesor/{id}','ProfesoresController@mostrar' );
 
 
-Route::get('storage/{archivo}', function ($archivo) {
+//RUTAS HORARIO 
+Route::get('/nuevo-horario','HorarioController@index' );
+Route::get('/asignar-horario','HorarioController@asignar' );
 
-	
-     $public_path = public_path();
-     $url = $public_path.'/storage/'.$archivo;
-     //verificamos si el archivo existe y lo retornamos
-     if (Storage::exists($archivo))
-     {
-       return response()->download($url);
-     }
-     //si no se encuentra lanzamos un error 404.
-     abort(404);
- 
-});
+
+//RUTAS INFRAESTRUCTURA 
+Route::get('/nueva-infraestructura','InfraestructuraController@index' );
+Route::get('/guardar-infraestructura','InfraestructuraController@guardar' );
+
+
+//RUTAS PENSUM 
+Route::get('/nuevo-pensum','PensumController@index' );
 
 
 
 
+//RUTAS SECCION
+Route::get('/nueva-seccion','SeccionController@index' );
+Route::get('/guardar-seccion','SeccionController@guardar' );
+
+
+
+
+//RUTAS DISEÑAR HORARIO
+Route::get('/diseñar-horario','HorarioController@index' );
+
+
+
+
+
+//RUTAS CONFIGURACION
+Route::get('/configuracion','SistemaController@configuracion' );
 
 
 
@@ -84,7 +97,7 @@ Route::post ('/contacto','contactoController@enviar'    );
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/inicio', 'HomeController@index');
 
 
 

@@ -4,9 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class producto extends Model
+class Profesor extends Model
 {
-    
+
+   public $table = "Profesor";
+
+
 
 
     /**
@@ -15,8 +18,12 @@ class producto extends Model
      * @var array
      */
     protected $fillable = [
-        'titulo', 'estado', 'descripcion',
+        'nombre', 'apellido', 'foto','cedula','telefonocelular','telefonofijo','profesion',
+        'correo', 'residencia'
     ];
+
+
+
 
 
 

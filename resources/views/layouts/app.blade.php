@@ -64,7 +64,13 @@
 
 
 
-      <footer class="container-fluid col-lg-12"> 
+         <footer class="container-fluid col-lg-12"> 
+
+
+
+
+
+
 
 
 
@@ -75,29 +81,25 @@
 
 <div   class="col-lg-12  ">
 
- <p  >
+
 
 
 <center>
 <hr>
 
-<h5 id="pie"    >   © 2017  Desarrollado por <a><i class="fa fa-code" aria-hidden="true"></i>  Jose Castillo</a>  | <a  href="{{ url('/contacto') }}"  > <i class="fa fa-phone-square" aria-hidden="true"></i>  Contactanos  </a>| <a href="https://www.economik.com.ve"> <i class="fa fa-globe" aria-hidden="true"></i>  Economik.com.ve   </a>  un emprendimiento e-commerce, radicados en la <strong>ciudad de El Tigre</strong> , estado Anzoategui   </h5> 
-<hr>
+<h5 id="pie"    >   © Desarrollado por <a><i class="fa fa-code" aria-hidden="true"></i>  Jose Castillo, Leonellys Rojas  </a>   | <a href="{{ url('/home') }}"> <i class="fa fa-globe" aria-hidden="true"></i>  Sighca </a>  Como proyecto de trabajo especial de grado. UNEFA, San Tome, 2017  </h5> 
+
 </center>
 
 
-</p>
+
+
 
 </div>
 
 
 
-
-
-       
-
-
-      </footer>
+</footer>
 
 
 

@@ -12,15 +12,14 @@
 <link   aria-hidden="true" href="{{ asset('img/favicon.png  ') }}  "  rel="shortcut icon" >
 
 
-
     <title>Sighca</title>
-
-    <!-- Styles -->
+   <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/alertify.min.css">
+       <link href="{{ asset('css/tecnicas.css') }}" rel="stylesheet">
+    <link href="  {{ asset('css/bootstrap.min.css') }}         " rel="stylesheet">
+<link rel="stylesheet" href="  {{ asset('css/font-awesome.min.css') }}           ">
+    <link rel="stylesheet" href="  {{ asset('css/estilos.css') }}          ">
+    <link rel="stylesheet" href=" {{ asset('css/alertify.min.css ') }}            ">
 
     <!-- Scripts -->
     <script>
@@ -34,17 +33,8 @@
 
 
 
-
 <body id="page-top" data-target="navbar-fixed-top">
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -66,9 +56,8 @@
 
 
     
-      <a class="navbar-brand page-scroll" id="economik" align="center"  href="{{ url('/') }}"> 
-
-      <span class="text-info" >
+   <a class="navbar-brand page-scroll" id="titulo" align="center"  href="{{ url('/') }}"> 
+  <span class="text-info" >
 <i class="fa fa-university" aria-hidden="true"></i>
 Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
           </a>
@@ -97,31 +86,13 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
       </ul>
 
 
+<ul  class="nav navbar-nav navbar-center">
+  
 
 
 
-   <form class="navbar-form navbar-left">
-        <div class="form-group">
-   
 
 
-
-</form> 
-</div>
-
-
-
- <ul   class="nav navbar-nav navbar-center">
-
-
-
- <li> <a title="" >
-
-
-
-          </a>
-
-</li>
 
 
 
@@ -129,28 +100,52 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
 </ul>
 
 
+
+
+
+
+
       <ul   class="nav navbar-nav navbar-right">
 
-       
+
+
+
+
+
+
+
+
 @if (Auth::guest())
      
 
 
  <li> <a class=""  href="{{ url('/login') }}">
+<span class="color-naranja "   >
 
-<strong>
-            Iniciar sesion </strong> </a>
+
+  
+</span>
+
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i>           Iniciar sesion  </a>
 
 </li>
+<li>
+
+<a  id="linea-vertical"  href="">
+&vert;
+
+</a>
+</li>
+<li>  <a class=""   href="{{ url('/register') }}">
+
+<span  class="color-naranja "   >
 
 
 
-<li>  <a class=" "   href="{{ url('/register') }}">
+</span>
 
 
-<strong>
-
-    Crear cuenta </strong></a>
+ <i class="fa fa-user-plus" aria-hidden="true"></i>    Crear cuenta </a>
 
 </li>
 
@@ -166,30 +161,153 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
 
 
 
+
 <li>
 
 
-   <a title="Inicio"   class=""  href=" {{ url('/home') }} ">
+   <a title="Inicio"   class=""  href=" {{ url('/inicio') }} ">
+<span  class="color-naranja "     >
+
+
+     
+</span>
+<strong>
+          <i class="fa fa-home" aria-hidden="true"></i>      Inicio </strong> </a>
+
+</li>
+
+
+
+
+
+
+
+
+ <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+         
 
 <strong>
-           Inicio </strong> </a>
+             <i class="fa fa-plus-square" aria-hidden="true"></i>   Añadir</strong>
 
-</li>
+                <span class=""></span></a>
+                <ul class="dropdown-menu">
+
+
+
+       <li><a href="{{ url('/nueva-infraestructura') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nueva infraestructura</a></li>
+
+
+
+
+
+
+   <li><a href="{{ url('/nuevo-profesor') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nuevo profesor</a></li>
+
+
+
+
+         
+               
+                  <li><a href="{{ url('/nuevo-pensum') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nuevo  Pensum</a></li>
+
+
+       <li><a href="{{ url('/nueva-seccion') }}"><i class="fa fa-plus-square" aria-hidden="true"></i> Nueva seccion</a></li>
+
+
+
+                 
+                </ul>
+              </li>
+
+
+
+<li>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
 
 
 <li>
 
-<a href=""   id="linea-vertical"          >
-&vert;
 
-</a>
+   <a title="Inicio"   class=""  href=" {{ url('/diseñar-horario') }} ">
+<span  class="color-naranja "     >
+
+
+     
+</span>
+<strong>
+          <i class="fa fa-calendar" aria-hidden="true"></i> Diseñar horario </strong> </a>
+
 </li>
 
 
 
 
 
- <li  class="dropdown"  >
+
+
+
+
+
+  <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+         
+
+<strong>
+             <i class="fa fa-thumb-tack" aria-hidden="true"></i>   Asignar</strong>
+
+                <span class=""></span></a>
+                <ul class="dropdown-menu">
+
+
+                   <li><a href="{{ url('/asignar-profesor') }}"><i class="fa fa-tag" aria-hidden="true"></i>   Asignar profesor</a></li>  
+                  
+             
+                  
+
+
+             
+                </ul>
+              </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <li  class="dropdown "  >
 
 
 
@@ -197,14 +315,14 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
 
 
   <a title="Usuario"  data-toggle="dropdown"    >
-<strong>
-{{ Auth::user()->email }} </strong>
+<strong> <i class="fa fa-suitcase" aria-hidden="true"></i>
+{{ Auth::user()->name }}  {{ Auth::user()->apellido }}   </strong>
 
  <span class="caret">  </span></button>
   <ul class="dropdown-menu">
 
 <li>
-<a href="">Configuracion</a>
+<a href="{{ url('/configuracion') }}"><i class="fa fa-cog" aria-hidden="true"></i>    Configuracion</a>
 </li>
 
 
@@ -212,9 +330,8 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
 
 
 
-
     <li><a title="Cerrar sesion"  class=" "   href="{{ route('logout') }}" onclick="event.preventDefault();
-document.getElementById('logout-form').submit();">Cerrar sesion   
+document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" aria-hidden="true"></i>   Cerrar sesion   
 
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -222,91 +339,19 @@ document.getElementById('logout-form').submit();">Cerrar sesion
                                         </form>
 
 </a>
-
-
 </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </ul>
-
-
-
-
-          
-
-
-
-
-              </a>
-
-
-
+</a>
 </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-                            
-
-
-
-
-
-
-
-
 
 
                         @endif
 
+  
 
-
+   <script src="{{ asset('js/jquery.js   ') }}   " ></script>
+    <script src="  {{ asset('js/jquery.easing.min.js   ') }}  " ></script>
  
             </ul>
           </div><!--/.nav-collapse -->
@@ -323,19 +368,17 @@ document.getElementById('logout-form').submit();">Cerrar sesion
 
 
 
-<section id="inicio1"    width="1200" height="700" >
+<section id="inicio-bienvenida"  class="bienvenida" style=""   >
 
-  <div class="carousel-inner" role="">
+  <div class="">
     <div class="">
 
    
 
-<style type="text/css">
-</style>
-     
-      <div class="portada">
-       <!-- TEXTO -->
 
+     
+      <div class="col-sm-12">
+       <!-- TEXTO -->
 
 <div class="text-info" id="texto-presentacion"  align="text-center">
 
@@ -343,9 +386,26 @@ document.getElementById('logout-form').submit();">Cerrar sesion
 <h5><i class="fa fa-university" aria-hidden="true"></i>
 Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </h5>
 
-<form>
+
+
+
+<div class="col-lg-3"></div>
+<form      class="col-lg-6"    role="form" action="{{ url('/busqueda') }}"
+ method="GET"   >
+{{ csrf_field() }}
+
+
   <div class="input-group">
-    <input type="text" class="form-control  input-lg btn-circle" placeholder="Busqueda ">
+    <input type="text" id="buscar" name="buscar" class="form-control  input-lg btn-circle" required="" placeholder="Busqueda ">
+
+
+@if (isset($message))
+<div class='bg-warning' style='padding: 20px'>
+    {{$message}}
+</div>
+@endif
+
+
     <div class="input-group-btn  ">
       <button class="btn btn-success btn-lg btn-circle" type="submit">
         <i class="glyphicon glyphicon-search"></i>
@@ -353,10 +413,10 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </h5>
     </div>
   </div>
 </form>
+<div class="col-lg-3"></div>
 
 
-
-<p class="subtitulo">
+<p class="subtitulo col-md-12">
  <i class="fa fa-cogs text-success" aria-hidden="true"></i>
 Sistema de gestion horaria y carga academica  <i class="fa fa-calendar-check-o text-success" aria-hidden="true"></i>
 
@@ -373,7 +433,7 @@ Sistema de gestion horaria y carga academica  <i class="fa fa-calendar-check-o t
 
 </section>
 
-<!-- Carrusel  termina -->
+
 
 
 
@@ -418,18 +478,18 @@ Sistema de gestion horaria y carga academica  <i class="fa fa-calendar-check-o t
 
 <div   class="col-lg-12  ">
 
- <p  >
+
 
 
 <center>
 <hr>
 
-<h5 id="pie"    >   © 2017  Desarrollado por <a><i class="fa fa-code" aria-hidden="true"></i>  Jose Castillo </a>  | <a  href="{{ url('/contacto') }}"  > <i class="fa fa-phone-square" aria-hidden="true"></i>  Contactanos  </a>| <a href="https://www.economik.com.ve"> <i class="fa fa-globe" aria-hidden="true"></i>  Economik.com.ve   </a>  Como proyecto de tesis. UNEFA, San Tome  </h5> 
+<h5 id="pie"    >   © Desarrollado por <a><i class="fa fa-code" aria-hidden="true"></i>  Jose Castillo, Leonellys Rojas  </a>   | <a href="{{ url('/home') }}"> <i class="fa fa-globe" aria-hidden="true"></i>  Sighca </a>  Como proyecto de trabajo especial de grado. UNEFA, San Tome, 2017  </h5> 
 
 </center>
 
 
-</p>
+
 
 </div>
 
@@ -456,8 +516,6 @@ Sistema de gestion horaria y carga academica  <i class="fa fa-calendar-check-o t
 
 
   <!-- Plugin JavaScript -->
-   <script src="js/jquery.js  " ></script>
-    <script src="js/jquery.easing.min.js " ></script>
 
 
   <script src="js/script.js " ></script> 

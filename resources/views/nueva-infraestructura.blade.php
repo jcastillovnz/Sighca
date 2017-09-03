@@ -180,6 +180,7 @@ Sighca <i class="fa fa-clock-o" aria-hidden="true"></i>  </span>
 
 
 
+
 <li>
 
 
@@ -368,6 +369,7 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
+
    <script src="{{ asset('js/jquery.js   ') }}   " ></script>
     <script src="  {{ asset('js/jquery.easing.min.js   ') }}  " ></script>
 
@@ -429,10 +431,17 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-
-
 <div   id="separador"   class="separador">
 
+</div>
+
+
+<div class="container azul">
+    <ol class="breadcrumb breadcrumb-arrow ">
+    <li><a href="{{ url('/') }}">Inicio</a></li>
+    <li><a href="">Nueva infraestructura </a></li>
+    
+  </ol>
 </div>
 
 
@@ -441,44 +450,115 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 <section  id="seccion"     >   
-
-<div class="container"    >
-
-
+ 
+  
 
 
 
 
-<form role="form" action="{{ url('/busqueda') }}"
- method="GET"   >
-{{ csrf_field() }}
-<div class="form-group">
- <div class="input-group  ">
-<input type="text" id="buscar" name="buscar" class="form-control   " required=""       >
-<span class="input-group-btn   ">
-<button title="Haz una busqueda" class="btn btn-success  " type="submit"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
+
+    <div class="">
+
+
+
+
+
+
+      <div class="container"    >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="main" class="wrapper row ">      
+
+
+                  <div class="col-md-12">
+
+
+
+   <div class="row ">
+            <div class="col-sm-12">
+
+ 
+                <div class="panel panel-default">
+ 
+
+  <div  class="panel-heading">
+
+ <span  style="padding-left: 20px;          font-size: 15px;">
+
+
+<strong><i class="fa fa-plus-circle" aria-hidden="true"></i>
+Nueva infraestructura  
+
+
+
+<span style="padding-left: 20px">
+<i class="fa fa-building" aria-hidden="true"></i>
+
 </span>
-</div>
-</form> 
-</div>
 
 
 
-<div id="main" class="wrapper row "> 
-<div class="col-md-12">
+ 
+   </strong>
 
 
-
-
-<div class="row ">
-<div class="col-sm-12">
+</span >
 
 
 
 
 
 
-<div    class="container">
+</span >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="panel-body ">
+              
+
+
   
 
 
@@ -487,71 +567,40 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-</div>
 
 
 
 
 
 
+<!-- BLOQUE SECCION -->
+
+
+<div id="formulario"> 
+
+<form class="navbar-form navbar-center" role="form" action="{{ url('/guardar-infraestructura') }}"
+ method="GET"    >{{ csrf_field() }}
+
+ </div>
 
 
 
 
 
 
-
-
-
-<div class="panel panel-default">
-<div  class="panel-heading">
-
-
-
-<span  style=" padding-left: 16px;  " class="text-success"  title="Estatus" style=""> 
-<i class="fa fa-calendar" aria-hidden="true"></i> Sistema de gestion y control de horarios</span>
-</span >
-<!-- cierre panel heading -->
-</div>
-
-
-
-
-
-<div class="panel-body ">
-              
-
-<div class="form-group col-sm-4">  
-<div class="well"  style="font-size: 20px;   height: 200px;">
-<center style="padding-top: 22%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Pensum
-
-</center>
-
-</div>
-</div>
-
+<!-- 1 -->
+@if (empty(   $numeroaulas)  )
+@if (empty(   $nombreedificios)  )
+@if (empty(   $nombreinfraestructura)  )
 
 
 <div class="form-group col-sm-4">  
-<div class="well"  style="font-size:20px;    height: 200px;">
-<center style="padding-top: 22%"   >
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Profesores
-
-</center>
-</div>
-</div>
+<div class="well"  style="font-size: 30px;   height: 255px;">
+<center style="padding-top: 25%"   >
 
 
-<div class="form-group col-sm-4">  
-<div class="well"  style="font-size: 20px;   height: 200px;">
-<center style="padding-top: 22%"   >
-
-<i class="fa fa-address-book" aria-hidden="true"></i>
+<i class="fa fa-building" aria-hidden="true"></i>
 Infraestructura
 
 </center>
@@ -559,62 +608,466 @@ Infraestructura
 </div>
 
 
-<!-- Carreras -->
+
+<div class="form-group col-sm-8">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-building"></span>
+</span>
+<input type="text"  title="Nombre" class="form-control " name="nombreinfraestructura"   id="nombreinfraestructura"   placeholder="Nombre de infraestructura"  required /></div>
+</div>
+
+<div class="form-group col-sm-8">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-globe"></span>
+</span>
+<input type="text"  title="Ubicacion" class="form-control " name="ubicacion"   id="ubicacion"   placeholder="Ubicacion"  required /></div>
+</div>
+
+
+<div class="form-group col-sm-8">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-phone-square"></span>
+</span>
+<input type="tel"  title="Telefono" class="form-control " name="telefono"   id="telefono"   placeholder="Telefono (Opcional)"   /></div>
+</div>
+
+
+<div class="form-group col-sm-8">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-envelope"></span>
+</span>
+<input type="email"  title="Correo" class="form-control " name="correo"   id="correo"   placeholder="Correo (Opcional)"   /></div>
+</div>
+
+
+<div class="form-group col-sm-8">
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-hashtag" aria-hidden="true"></i>
+</span>
+<input type="number"  title="Numero de edificios" class="form-control"  min="1" max="10" name="numeroedificios"   id="numeroedificios"   placeholder="Numero de Edificios" required /></div>
+</div>
 
 
 
-<div class="form-group col-sm-6">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
+<div class="form-group col-sm-8">
+<button class="btn btn-success btn-sm btn-circle  pull-right"  > <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>  Continuar   </button>
+</div>
+
+
+
+
+@endif
+@endif
+@endif
+
+
+
+
+
+
+<!-- 2 -->
+@if   (isset($numeroedificios )   )
+
+@for($i = 0; $i < $numeroedificios; $i++)
+
+
+
+<div class="form-group col-sm-4">  
+
+
+
+
+<div class="well"  style="font-size: 30px;   height: 255px;">
+<center style="padding-top: 25%"   >
+
+<input class="hidden" value="{{$numeroedificios}}" type="" id="numeroedificios" name="numeroedificios">
+<i class="fa fa-building" aria-hidden="true"></i>
+Edificio    {{$i+1}}
 
 </center>
 </div>
 </div>
 
-<div class="form-group col-sm-6">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
+<div class="form-group col-sm-8">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-building"></span>
+</span>
+<input type="text"  title="Nombre de edificio" class="form-control " name="nombreedificio"   id="nombreedificio"   placeholder="Nombre de edificio"  required /></div>
+</div>
+
+
+
+
+
+<div class="form-group col-sm-4">
+<div class="input-group">
+<span class="input-group-addon"><i class="fa fa-hashtag" aria-hidden="true"></i>
+</span>
+<input type="number"  title="Numero de aulas" class="form-control"  min="1" max="35" name="numeroaulas"   id="numeroaulas"   placeholder="Numero de Aulas" required /></div>
+</div>
+
+<div class="form-group col-sm-4">
+<div class="input-group">
+<span class="input-group-addon"><span class="fa fa-building"></span>
+</span>
+<input type="text"  title="Prefijo aula" class="form-control " name="prefijoaula"   id="prefijoaula"   placeholder="Prefijo de aulas"  required /></div>
+</div>
+
+
+
+<div class="col-sm-8">
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<div  style="padding-top: 1px; padding-bottom: 1px ;  margin: 0px" class="col-sm-12"><hr></div>
+
+
+@endfor
+
+
+<div class="form-group col-sm-12">
+<button class="btn btn-success btn-sm btn-circle  pull-right" type="submit" > <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>  Continuar   </button>
+</div>
+@endif
+
+
+
+
+
+<!-- 3 -->
+@if   (isset ($numeroaulas ))
+
+
+{{var_dump($nombreedificio)}}
+::::
+{{var_dump($nominfraestructura)}}
+
+
+
+@for($i = 0; $i < $nedificios; $i++)
+
+ 
+
+<div class="form-group col-sm-4">  
+
+
+
+
+<div class="well"  style="font-size: 30px;   height: 255px;">
+<center style="padding-top: 25%"   >
+
+
+<i class="fa fa-building" aria-hidden="true"></i>
+Edificio    {{$i+1}}
 
 </center>
 </div>
 </div>
 
-<div class="form-group col-sm-12">  
-<div class="well"  style="font-size: 20px;   height: 70px;">
-<center style="padding-top: 0%"   >
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
-Ingenieria de sistemas
+<div class="form-group col-sm-8">
+<strong>
+Nombre de insfraestructura: {{$nominfraestructura}}    </strong>
 
+</div>
+
+
+
+
+
+<div class="form-group col-sm-4">
+<strong>
+Nombre de edificio: {{$nombreedificio}}     </strong>
+
+</div>
+
+<div class="form-group col-sm-4">
+<strong>
+Prefijo de aulas:</strong>
+
+</div>
+
+
+<div class="col-sm-8">
+
+
+<p>
+<center><i class="fa fa-check-circle text-success" aria-hidden="true"></i>
+Aulas creadas</center></p>
+
+@for($contador = 0; $contador < $numeroaulas; $contador++)
+
+
+<span  class="btn btn-success btn-xs">
+<strong>
+<i class="fa fa-bookmark" aria-hidden="true"></i>
+A {{$contador+1}}   
+</strong>
+</span>
+
+
+
+
+@endfor
+
+
+
+
+</div>
+
+
+
+
+
+
+<div  style="padding-top: 1px; padding-bottom: 1px ;  margin: 0px" class="col-sm-12"><hr></div>
+
+
+@endfor
+
+
+
+
+<div class="form-group col-sm-12">
+<button class="btn btn-success btn-sm btn-circle  pull-right" type="submit" > <i class="fa fa-check-circle" aria-hidden="true"></i>  Guardar </button>
+</div>
+@endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+</form> 
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- BLOQUE CIERRE -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+    
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+        </div>
+
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+
+ 
+
+  </div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="datas" > 
+
+
+
+<div class="container">
+
+
+<hr>
+    <div class="row">
+
+
+
+
+
+
+
+
+        <div class="col-xs-12 col-xs-4" >
+            <div class="">
+  <center id="">
+
+ 
+
+<strong   id="" > 
+
+Nº Profesores:    
+</strong>
+
+
+ 
+
+
+
+   </center>
+ <hr> 
+            </div>
+        </div>
+      
+        <div class="col-xs-12 col-xs-4" >
+              <div class="">
+
+
+
+  <center id="">
+
+
+
+
+<strong   id="" > 
+
+Nº Infraestructura:  
+</strong>
 </center>
-</div>
-</div>
+ <hr> 
+            </div>
+        </div>
+       
+        <div class="col-xs-12 col-xs-4" >
+        <div class="">
+<center id="">
 
 
 
 
+<strong   id="" > 
+Nº Pensum: 
+</strong>
+</center>
+ 
+ <hr> 
+            </div>
+
+
+
+        </div>
+
+
+
+      </div>
 
 
 
 
-</div><!-- cierre panel body-->
-</div><!-- cierre panel default-->
-
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  </section>
 
 
 
@@ -624,10 +1077,19 @@ Ingenieria de sistemas
 </section>
 
 
-@extends ('layouts.seccion')
+    
 
 
-@section('seccion')@endsection
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -639,7 +1101,21 @@ Ingenieria de sistemas
   </div><!-- /.container contenedor-->
 
 
-<footer class="container-fluid col-lg-12"> 
+      <footer class="container-fluid col-lg-12"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div   class="col-lg-12  ">
 
 
@@ -651,9 +1127,17 @@ Ingenieria de sistemas
 
 </center>
 
+
+
+
+
+
 </div>
 
+
+
 </footer>
+
 
 
 

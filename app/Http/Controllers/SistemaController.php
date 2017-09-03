@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Producto;
 
-class DetalleproductoController extends Controller
+use App\Profesores;
+
+
+
+
+
+
+
+class SistemaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,21 +21,54 @@ class DetalleproductoController extends Controller
      */
     public function index()
     {
-      
-
-$productos= producto ::where ('id','=','1')->get(['id','titulo', 'estado', 'descripcion', 'precio']);
-
-{
 
 
 
-return view ('productos/power-bank-samsung-2600-mah',compact('productos') );
 
-}
+
+
+
+
+return view ('/welcome' );
+
+
 
 
         //
     }
+
+
+
+
+
+
+public function configuracion()
+    {
+
+
+
+
+
+
+
+
+return view ('/configuracion' );
+
+
+
+
+        //
+    }
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -59,21 +99,6 @@ return view ('productos/power-bank-samsung-2600-mah',compact('productos') );
      */
     public function show($id)
     {
-
-
-
-
-
-$productos= producto ::find ($id);
-
-
-
-return view ('Detalleproducto.showExpediente', array('expediente' => $expediente));
-
-
-
-
-
         //
     }
 
@@ -85,17 +110,6 @@ return view ('Detalleproducto.showExpediente', array('expediente' => $expediente
      */
     public function edit($id)
     {
-      
-
-
-
-
-        $expediente = Expediente::find($id);
-               return view ('expedientes.editarExpediente', array ('expediente' => $expediente));
-
-
-
-
         //
     }
 
@@ -119,9 +133,6 @@ return view ('Detalleproducto.showExpediente', array('expediente' => $expediente
      */
     public function destroy($id)
     {
-    $expediente = Expediente::find($id);
-        $expediente -> delete(); 
-                $expediente -> save(); 
-        return 'eliminado';
+        //
     }
 }
