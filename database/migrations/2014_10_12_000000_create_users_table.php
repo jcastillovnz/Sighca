@@ -20,9 +20,8 @@ class CreateUsersTable extends Migration
                   $table->string('cedula')->nullable();
                    $table->string('telefono')->nullable();
             $table->string('email',50)->unique();
-             $table->string('ubicacion')->nullable();
-               $table->string('usuario')->nullable();
-                $table->string('fecha_nacimiento')->nullable() ;
+     
+                $table->string('nivelacceso')->nullable() ;
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

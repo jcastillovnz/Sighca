@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 .nombre{
   font-size: 9px;
 }
@@ -13,7 +20,6 @@
 display:inline-block;
 width: 25px;
 }
-
 
 
 
@@ -98,11 +104,6 @@ color: #000000 ;
 
 
 }
-
-
-
-
-
 
 
 
@@ -205,11 +206,9 @@ color:  #709cff;
 
 #registro{
 
-  
 
-padding-top: 5%;
 background-color: #ffffff;
-padding-bottom: 5%
+
 
 }
 #control-label{
@@ -358,7 +357,10 @@ padding-top: 0px;
 }
 
 
+li{
 
+
+}
 
 #catalogo-seccion{
 
@@ -937,6 +939,8 @@ padding-top: 0px:;
 margin-top: 0px;
 margin-top: 0px;
 
+  background-color: 
+ #fff;
 
 font-size: 13px;
 
@@ -974,11 +978,7 @@ color:#96939a;
 }
 
 
-.navbar-default{
 
- 
-
-}
 
 
 .navi:hover{
@@ -1060,7 +1060,7 @@ font-size: 9px;
 
 #inicio-bienvenida {
 
-padding-top: 200px;
+padding-top: 190px;
 
 }
 

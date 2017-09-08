@@ -13,7 +13,7 @@
 
 
 
-    <title>Perseo</title>
+    <title>Sighca </title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -65,19 +65,6 @@
 
 
          <footer class="container-fluid col-lg-12"> 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div   class="col-lg-12  ">
 

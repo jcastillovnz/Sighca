@@ -14,8 +14,6 @@
 
     <title>Sighca</title>
    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-       <link href="{{ asset('css/tecnicas.css') }}" rel="stylesheet">
     <link href="  {{ asset('css/bootstrap.min.css') }}         " rel="stylesheet">
 <link rel="stylesheet" href="  {{ asset('css/font-awesome.min.css') }}           ">
     <link rel="stylesheet" href="  {{ asset('css/estilos.css') }}          ">

@@ -15,12 +15,10 @@
     <title>Sighca</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-       <link href="{{ asset('css/tecnicas.css') }}" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/alertify.min.css">
+    <link href="  {{ asset('css/bootstrap.min.css') }}         " rel="stylesheet">
+<link rel="stylesheet" href="  {{ asset('css/font-awesome.min.css') }}           ">
+    <link rel="stylesheet" href="  {{ asset('css/estilos.css') }}          ">
+    <link rel="stylesheet" href=" {{ asset('css/alertify.min.css ') }}            ">
 
     <!-- Scripts -->
     <script>

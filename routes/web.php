@@ -13,7 +13,7 @@
 
 
 //RUTA BIENVENIDA
-Route::resource ('/','SistemaController' );
+Route::get ('/','SistemaController@bienvenida' );
 
 
 
@@ -62,6 +62,7 @@ Route::get('/diseñar-horario','HorarioController@index' );
 Route::get('/configuracion','SistemaController@configuracion' );
 
 
+Route::get('/configuracion/mi-cuenta','SistemaController@micuenta' );
 
 
 

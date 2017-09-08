@@ -149,6 +149,73 @@
 
 
 
+
+         <div class="col-sm-12   form-group{{ $errors->has('cedula') ? ' has-error' : '' }}">
+                         <div class="input-group">
+                                <span class="input-group-addon"><span class=" fa fa-envelope"></span>
+                                </span>
+                            <input type="text" class="form-control"  name="cedula" id="cedula"  placeholder="Cedula" required />
+
+
+
+
+
+
+                        </div> 
+@if ($errors->has('cedula'))
+                                   
+                              <center>       <strong>{{ $errors->first('cedula') }}</strong>
+                                </center>   
+                                @endif
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="col-sm-12   form-group{{ $errors->has('permiso') ? ' has-error' : '' }}">
+                         <div class="input-group">
+                                <span class="input-group-addon"><span class=" fa fa-lock"></span>
+                                </span>
+                            <input type="text" class="form-control"  name="Permiso" id="Permiso"  placeholder="Permiso" />
+
+
+
+
+
+
+                        </div> 
+@if ($errors->has('permiso'))
+                                   
+                              <center>       <strong>{{ $errors->first('permiso') }}</strong>
+                                </center>   
+                                @endif
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="col-sm-12    form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
       <div class="input-group">

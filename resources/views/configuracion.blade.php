@@ -15,12 +15,10 @@
     <title>Sighca</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-       <link href="{{ asset('css/tecnicas.css') }}" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/alertify.min.css">
+    <link href="  {{ asset('css/bootstrap.min.css') }}         " rel="stylesheet">
+<link rel="stylesheet" href="  {{ asset('css/font-awesome.min.css') }}           ">
+    <link rel="stylesheet" href="  {{ asset('css/estilos.css') }}          ">
+    <link rel="stylesheet" href=" {{ asset('css/alertify.min.css ') }}            ">
 
     <!-- Scripts -->
     <script>
@@ -562,9 +560,11 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
+<i class="fa fa-cog  " aria-hidden="true"></i>
+<strong>
+Configuracion
+</strong>
 
-
-<button type="button" class="btn btn-lg btn-warning btn-xs " data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" > <i class="fa fa-question-circle-o" aria-hidden="true"></i>  Ayuda</button>
 </span>
 
 
@@ -609,7 +609,13 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 <span style="font-size: 30px;"      >
 Configuracion
 </span>
+
+
+
 </center>
+
+
+
 </div>
 </div>
 
@@ -621,7 +627,8 @@ Configuracion
 
 
 <div class="form-group col-sm-8"><center>
-<button class="btn btn-default btn-sm btn-block"><i class="fa fa-user-circle-o" aria-hidden="true"></i>  Mi cuenta</button></center>
+<a  href="{{ url ('configuracion/mi-cuenta'     ) }}"    class="btn btn-default btn-lg btn-block"> <i class="fa fa-user-circle-o" aria-hidden="true"></i>  
+Mi cuenta </a> </center>
 </div>
 
 

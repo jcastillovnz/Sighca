@@ -13,13 +13,14 @@
 
 
     <title>Sighca</title>
-   <!-- Styles -->
-      <link href="  {{ asset('css/bootstrap.min.css') }}         " rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+       <link href="{{ asset('css/tecnicas.css') }}" rel="stylesheet">
+    <link href="  {{ asset('css/bootstrap.min.css') }}         " rel="stylesheet">
 <link rel="stylesheet" href="  {{ asset('css/font-awesome.min.css') }}           ">
     <link rel="stylesheet" href="  {{ asset('css/estilos.css') }}          ">
     <link rel="stylesheet" href=" {{ asset('css/alertify.min.css ') }}            ">
-
-
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -371,6 +372,9 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
     <script src="  {{ asset('js/jquery.easing.min.js   ') }}  " ></script>
 
 
+
+
+
  
             </ul>
           </div><!--/.nav-collapse -->
@@ -429,6 +433,7 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
+
 <div   id="separador"   class="separador">
 
 </div>
@@ -437,8 +442,8 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 <div class="container azul">
     <ol class="breadcrumb breadcrumb-arrow ">
     <li><a href="{{ url('/') }}">Inicio</a></li>
-    <li><a href="">Busqueda</a></li>
-    <li class="active"><span>     </span></li>
+    <li><a href="">Configuracion </a></li>
+       <li><a href="">Mi cuenta </a></li>
   </ol>
 </div>
 
@@ -454,189 +459,41 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
     <div class="">
+
+
+
+
+
+
       <div class="container"    >
 
 
 
-<form         role="form" action="{{ url('/busqueda') }}"
- method="GET"   >
-{{ csrf_field() }}
 
 
 
 
-        <div class="form-group">
- <div class="input-group  ">
-      <input type="text" id="buscar" name="buscar" class="form-control   ">
-      <span class="input-group-btn   ">
-        <button title="Haz una busqueda" class="btn btn-success  " type="submit"> <i class="fa fa-search" aria-hidden="true"></i>    Buscar</button>
-      </span>
-    </div>
-</form> 
-</div>
 
 
 
-        <div class="wrapper row ">      
 
 
 
 
 
 
-          <div class=" col-md-3">
 
 
 
 
 
 
-<div class="panel panel-default">
-  <div class="panel-heading">
 
-<center>
-      <small>       <strong>     <i class="fa fa-search" aria-hidden="true"></i> Filtrado por:</strong> 
-</small>     </center>
 
 
- 
 
 
-
-
-
-
-
-
-
-
-   </div>
-
-
-
-
-
-  <div class="panel-body">
-
-
-
-<div class="form-group">
-                           
-                            <select  id="ciudad" name="ciudad" class="form-control form-control-lg" >
-                                <option value="" selected="">Carrera</option>
-                                <option value="El tigre">Sistemas</option>
-                                <option value="San jose de guanipa">Petroleo</option>
-                                      <option value="San tome">Enfermeria</option>
-                               
-                            </select>
-                        </div>
-
-
-
-
-
-
-
-<div class="form-group">
-                           
-                            <select  id="ciudad" name="ciudad" class="form-control" >
-                                <option value="" selected="">Seccion</option>
-                                <option value="El tigre">Sistemas</option>
-                                <option value="San jose de guanipa">Petroleo</option>
-                                      <option value="San tome">Enfermeria</option>
-                               
-                            </select>
-                        </div>
-
-
-
-
-<div class="form-group">
-                           
-                            <select  id="ciudad" name="ciudad" class="form-control" >
-                                <option value="" selected="">Pensum</option>
-                                <option value="El tigre">Sistemas</option>
-                                <option value="San jose de guanipa">Petroleo</option>
-                                      <option value="San tome">Enfermeria</option>
-                               
-                            </select>
-                        </div>
-
-
-
-<div class="form-group">
-                           
-                            <select  id="ciudad" name="ciudad" class="form-control" >
-                                <option value="" selected="">Asignatura</option>
-                                <option value="El tigre">Sistemas</option>
-                                <option value="San jose de guanipa">Petroleo</option>
-                                      <option value="San tome">Enfermeria</option>
-                               
-                            </select>
-                        </div>
-
-
-
-
-
-
-
-
-</div>
-
-
-   
-</div>
-
-
-
-
-
-          </div>
-
-
-
-
-
-
-
-
-                  <div class="col-md-9">
-
-
-
-
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-
-@if (isset($message))
-
- <small>   <strong>   <i class="fa fa-eye" aria-hidden="true"></i> Usted esta viendo 0 resultados</strong>  
-                                 </small> 
-@endif
-
-              @if (isset($profesores))
-                  <small>   <strong>   <i class="fa fa-eye" aria-hidden="true"></i> Usted esta viendo  {{ $profesores->count() }}   de {{ $profesores->count() }} resultados</strong>  
-                                 </small> 
-
-@endif
-
-
-
-
-
-                            
-    <span  style="float: right; padding-right: 20px; font-size: 17px;"  >
-<i class="fa fa-bookmark azul" aria-hidden="true"></i> </span > 
-
-  </div>
-
-
-
-
-
-
+        <div id="main" class="wrapper row ">      
 
 
 
@@ -648,41 +505,82 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-</div>
+
+
+
+
+                  <div class="col-md-12">
 
 
 
 
 
 
-@if (isset($message))
 
+
+
+
+
+
+
+
+
+
+
+
+               
 
 
 
    <div class="row ">
             <div class="col-sm-12">
+
+
+
+
+
+
+
+
+
+
+
                 <div class="panel panel-default">
+ 
 
-                  <div id="metadato" class="panel-heading">
+  <div  class="panel-heading ">
 
-<span class="azul">
 
-<span style="padding-left: 16px;"  title="Id" style="font-size: 12px;" class="text-success" >
-<i class="fa fa-barcode" aria-hidden="true"></i> </span > 
+
+
+
+
+
+
+<span  style="padding-left: 16px;  padding-left: 20px;    "   >
+
+<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+<strong>
+Mi cuenta
+</strong>
 
 </span>
 
 
 
 
-                              
-                            
-    <span  style="float: right; padding-right: 20px; font-size: 17px;"  >
-<i class="fa fa-bookmark azul" aria-hidden="true"></i> </span > 
+   </div>
 
-  </div>
- 
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -695,17 +593,29 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-                    
-                     <div class='' style='height:  125px ;font-size:25px;'>
 
 
-  <center>  <i style="color:#f0d913; padding-top: 5%;" class="fa fa-exclamation-triangle  " aria-hidden="true"></i>      {{$message}}  <strong>{{$buscar}} </strong> </center> 
+<div class="form-group col-sm-4">  
+
+
+
+
+<div class="well"    style=" height: 255px;">
+<center style="padding-top: 25%"   >
+
+
+<i class="fa fa-cog fa-spin fa-3x fa-fw" style="font-size: 40px;" aria-hidden="true"></i>
+<span style="font-size: 30px;"      >
+Mi cuenta
+</span>
+</center>
 </div>
-          </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
+</div>
+
+
+
+
+@if (empty($estado))
 
 
 
@@ -714,138 +624,32 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
+<div class="form-group col-sm-4">
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-@endif
-
-
-
-
-
-
-
-              @if (isset($profesores))
-   
-  @foreach ($profesores as $n  )  
- 
-
-
-
-   <div class="row ">
-            <div class="col-sm-12">
-                <div class="panel panel-default">
-
-
-
-
-
-                  <div id="metadato" class="panel-heading">
-
-
-
-    <span style="padding-left: 16px;"  title="Id" style="font-size: 12px;" class="text-success" >
-<i class="fa fa-barcode" aria-hidden="true"></i> {{    $n-> id }}</span > 
-
-
- 
-
-
-
-
-
-
-
-
-                              
-                    
-
-
-                            
-    <span  style="float: right; padding-right: 20px; font-size: 17px;"  >
-<i class="fa fa-bookmark azul" aria-hidden="true"></i> </span > 
-
-
+ <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+    <input id="nombre" type="text" value=" {{Auth::user()->name }} "  class="form-control btn-block" readonly="" name="nombre" placeholder="Nombre">
   </div>
- 
 
 
 
+</div>
+
+
+<div class="form-group col-sm-4">
 
 
 
-
-                    <div    class="panel-body ">
-              
-
-
-
-                    
-                     
-                         
-
-
-
-
-
-
-
-
-<div id="dato"  align="left" style="padding-left: 12%; padding-right: 12%; "   class="col-md-4 col-md-4 ">
-
-
-
-<img id="foto" class="img-responsive" alt="Foto de perfil" align="center" src="img/perfil.png" width="150"  height="300" >
-
-
-
-
-
-
+ <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+    <input id="apellido" type="text" value="{{Auth::user()->apellido }} "  class="form-control btn-block" readonly="" name="apellido" placeholder="Apellido">
   </div>
-                           
-  
 
 
 
-
-<div style="font-size: 13px"   align="left"    class="col-md-4">
-
-<strong>
-<span >Nombre:     </strong>   {{    $n-> nombre }}  {{    $n-> apellido }}       </span> 
-    </div> 
-
-  
-<div  style="font-size: 13px"  align="left"     class="col-md-4">
-<strong>Cedula:</strong> {{    $n-> cedula }}   
- 
-
-
-    </div>
-
-
-<div style="font-size: 13px"    align="left"    class="col-md-4">
-<strong>Telefono celular:       </strong> {{    $n-> telefonocelular }} 
-
-    </div>
-
-
-
-<div style="font-size: 13px"    align="left"    class="col-md-4">
-<strong>Telefono fijo:       </strong> {{    $n-> telefonofijo }} 
-
-    </div>
+</div>
 
 
 
@@ -853,92 +657,374 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-<div style="font-size: 13px"   align="left"    class="col-md-4">
-
-<strong>Profesion:    </strong>{{    $n-> profesion }} 
 
 
 
+
+
+
+
+<div class="form-group col-sm-4">
+
+
+
+
+ <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+    <input id="correo" value="{{Auth::user()->email }}" type="text" readonly="" class="form-control btn-block" name="password" placeholder="Correo">
   </div>
-                           
-  
 
 
-
-  
-<div  style="font-size: 13px"  align="left"     class="col-md-4">
-
-<strong>Correo:   </strong>{{    $n-> correo }} 
-
-
-    </div>
-
-
-<div  style="font-size: 13px"  align="left"     class="col-md-8">
-
-<strong>Residencia:</strong> {{    $n-> residencia }} 
-
-    </div>
-                     
- 
+</div>
 
 
 
 
+<div class="form-group col-sm-4">
+ <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+    <input id="telefono" type="text" value="{{Auth::user()->telefono }}" readonly="" class="form-control btn-block" name="telefono" placeholder="Telefono">
+  </div>
+
+
+
+</div>
+
+
+
+<div class="form-group col-sm-4">
+
+ <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i></span>
+    <input id="cedula" type="text" value="{{Auth::user()->cedula }}" readonly="" class="form-control btn-block" name="cedula" placeholder="Cedula">
+  </div>
+
+
+
+</div>
 
 
 
 
+<div class="form-group col-sm-4">
 
 
-
-
-
-
-
-<div class="col-lg-12" align="right">
-
-@if (Auth::guest())
-
-
-
-
-    <a class="btn btn-success btn-sm"    href="{{ url('/register') }}"  >  
-
-<strong><i class="fa fa-calendar" aria-hidden="true"></i> Detalle  </strong>   </a>  </div>
-
-
-  @else
-<a  href="{{ url('asignar-profesor', $n->id) }}" class="btn btn-default btn-sm" >
-
-<strong><i class="fa fa-calendar-o" aria-hidden="true"></i>  Asignar Horario </strong>   </a> 
+ <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input id="password"  type="text" value="{{Auth::user()->nivelacceso }}" readonly="" class="form-control btn-block" name="password" placeholder="Nivel de acceso">
+  </div>
 
 
 
 
 
-
-<input class="hidden" id="id" name="id" value="{{    $n-> id }}">
-
+</div>
 
 
+<div class="form-group col-sm-4">
+
+
+ <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input id="password" type="password"  value="{{Auth::user()->password }}"         readonly="" class="form-control btn-block" name="password" placeholder="Contraseña">
+  </div>
 
 
 
 
-<a  href="{{ url('detalle-profesor', $n->id) }}" class="btn btn-success btn sm">
+
+</div>
 
 
-<i class="fa fa-calendar" aria-hidden="true"></i> 
+
+
+
+
+
+<div class="form-group  col-sm-8 ">
+<hr>
+
+<form class="" role="form" action="{{ url('/configuracion/mi-cuenta') }}" method="GET"    >
+
 {{ csrf_field() }}
-Detalle  
+
+<input  class="hidden" value="{{Auth::user()->id }}" type="" id="id" name="id">
+
+<button   type="submit"  class="btn btn-warning  pull-right" title="Modificar"><i class="fa fa-pencil-square" aria-hidden="true"></i></button >
+
+</form>
+
+</div>
+@endif
 
 
-</a>  
+
+
+
+
+
+<!-- ////Modificar -->
+
+
+
+
+@if (isset($estado)) 
+
+@if (isset($mensaje))
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+ alertify.success('  <center style="color: #fff;" > <strong> <i class="fa fa-check-circle" aria-hidden="true"></i> {{$mensaje}} </strong>    </center>    '), 'success','20'   ;
+
+});
+</script>
+
+
+
+
+
+@endif
+
+
+
+
+
+
+
+
+
+
+
+<form class="" role="form" action="{{ url('/configuracion/mi-cuenta') }}" method="GET"    >
+
+{{ csrf_field() }}
+
+
+
+<div class="form-group col-sm-4">
+
+
+
+ <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+    <input id="name" type="text" value=" {{Auth::user()->name }} "  class="form-control btn-block"  name="name" placeholder="Nombre">
+  </div>
+
+
+@if($errors->has('nombre'))
+
+
+<center>Hubo un error</center>
+
+
+@endif
 
 
 </div>
 
+
+<div class="form-group col-sm-4">
+
+
+
+ <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+    <input id="apellido" type="text" value="{{Auth::user()->apellido }} "  class="form-control btn-block"  name="apellido" placeholder="Apellido">
+  </div>
+
+
+
+
+@if($errors->has('apellido'))
+
+
+<center>Hubo un error</center>
+
+
+@endif
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group col-sm-4">
+
+
+
+
+ <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+    <input id="email" value="{{Auth::user()->email }}" type="text" class="form-control btn-block" name="email" placeholder="Correo">
+  </div>
+
+
+
+@if($errors->has('correo'))
+
+
+<center>Hubo un error</center>
+
+
+@endif
+
+
+</div>
+
+
+
+
+<div class="form-group col-sm-4">
+ <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+    <input id="telefono" type="text" value="{{Auth::user()->telefono }}" class="form-control btn-block" name="telefono" placeholder="Telefono">
+
+
+
+
+@if($errors->has('telefono'))
+
+
+<center>Hubo un error</center>
+
+
+@endif
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+<div class="form-group col-sm-4">
+
+ <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i></span>
+    <input id="cedula" type="text" value="{{Auth::user()->cedula }}" class="form-control btn-block" name="cedula" placeholder="Cedula">
+  </div>
+
+@if($errors->has('cedula'))
+
+
+<center>Hubo un error</center>
+
+
+@endif
+
+</div>
+
+
+
+
+<div class="form-group col-sm-4">
+
+
+ <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input id="nivelacceso"  type="text" value="{{Auth::user()->nivelacceso }}" class="form-control btn-block" name="nivelacceso" placeholder="Nivel de acceso">
+
+@if($errors->has('nivelacceso'))
+
+
+<center>Hubo un error</center>
+
+
+@endif
+
+
+
+  </div>
+
+
+
+
+
+</div>
+
+
+<div class="form-group col-sm-4">
+
+
+ <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input id="password" type="password"  value=""        class="form-control btn-block" name="password" placeholder="Contraseña">
+
+
+@if($errors->has('password'))
+
+
+<center>Hubo un error</center>
+
+
+@endif
+
+  </div>
+
+
+
+
+
+</div>
+
+
+<div class="form-group col-sm-4">
+
+
+ <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input id="password" type="password"  value=""        class="form-control btn-block" name="password" placeholder="Confirmar Contraseña">
+  </div>
+
+
+@if($errors->has('password'))
+
+
+<center>Hubo un error</center>
+
+
+@endif
+
+
+</div>
+
+
+
+
+
+
+<div   class=" col-sm-8">
+ 
+
+<button  type="submit"  title="Guardar cambios" class="btn btn-success  pull-right" ><i class="fa fa-check-circle" aria-hidden="true"></i>  </button>
+
+
+
+
+</form>
+
+
+
+
+
 @endif
 
 
@@ -946,36 +1032,29 @@ Detalle
 
 
 
+</div>
 
-                        </div>
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
 
 
                     </div>
-
-
-
-
-
-
-
-
-                    </div>
-
-
-
-
                 </div>
-
-
-        @endforeach  
-@endif
-
-
             </div>
     
 
 
-                
+
 
      
 
@@ -1020,6 +1099,9 @@ Detalle
 
 
 </section>
+
+
+
 
 
 
@@ -1168,13 +1250,14 @@ Nº Pensum:
 
 
 
-
 <center>
 <hr>
 
-<h5 id="pie"    >   © Desarrollado por <a><i class="fa fa-code" aria-hidden="true"></i>  Jose Castillo, Leonellys Rojas  </a>   | <a href="https://www.economik.com.ve"> <i class="fa fa-globe" aria-hidden="true"></i>  Sighca </a>  Como solucion a nuestro caso de trabajo especial de grado. UNEFA, San Tome, 2017  </h5> 
+<h5 id="pie"    >   © Desarrollado por <a><i class="fa fa-code" aria-hidden="true"></i>  Jose Castillo, Leonellys Rojas  </a>   | <a href="{{ url('/home') }}"> <i class="fa fa-globe" aria-hidden="true"></i>  Sighca </a>  Como proyecto de trabajo especial de grado. UNEFA, San Tome, 2017  </h5> 
 
 </center>
+
+
 
 
 
@@ -1203,17 +1286,21 @@ Nº Pensum:
 
 
 
-   <script src="{{ asset('js/jquery.js') }}   " ></script>
+
+
+  <!-- Plugin JavaScript -->
+
+   <script src="{{ asset('js/jquery.js   ') }}   " ></script>
     <script src="  {{ asset('js/jquery.easing.min.js   ') }}  " ></script>
+ <script src="{{ asset('js/vue.js   ') }}   " ></script>
 
-
-  <script src="  {{ asset('js/script.js') }}     " ></script> 
+  <script src="  {{ asset('js/script.js  ') }}     " ></script> 
      <script src="   {{ asset('js/alertify.js    ') }}   " ></script>
   <script src="    {{ asset('js/bootstrap.min.js      ') }}  "></script>
      <script src="      {{ asset('js/pace.min.js          ') }}  " ></script>
         
 
- 
+
 
   
 

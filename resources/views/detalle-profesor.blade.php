@@ -472,7 +472,7 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
   <div  class="panel-heading">
 
-<span  style="padding-left: 20px; "  class="btn btn-default btn-circle" >
+<span  style="padding-left: 20px; "  class="btn btn-default " >
 
 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
 <strong>
@@ -647,7 +647,7 @@ Profesor</strong>
  
   <div  class="panel-heading">
 
-<span  style="padding-left: 20px; "  class="btn btn-default btn-circle" >
+<span  style="padding-left: 20px; "  class="btn btn-default " >
 
 <i class="fa fa-calendar" aria-hidden="true"></i>
 <strong>
@@ -662,13 +662,13 @@ Horario asignado</strong>
 
 <span class=""  style="float: right; padding-right: 20px;">
   
-<a  href="" class="btn btn-default btn-sm" >
+<a  href="" title="Asignar"   class="btn btn-success btn-sm" >
 
-<strong><i class="fa fa-calendar-o" aria-hidden="true"></i>  Asignar Horario </strong>   </a> 
+<strong><i class="fa fa-calendar-o" aria-hidden="true"></i> </strong>   </a> 
 
 
 
-<a  title="Modificar" class="btn btn-warning btn-sm" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Modificar </a>
+<a  title="Modificar" class="btn btn-warning btn-sm" href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 
 
 
