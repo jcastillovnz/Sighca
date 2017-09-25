@@ -529,14 +529,16 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-<center   style="padding-top: 70px" >
- <span style="font-size: 35px;" >
 
+ <span >
+<center   style="padding-top: 70px ; font-size: 35px"       >
 <i class="fa fa-desktop" aria-hidden="true"></i>
-Panel 
-
-</span>  <span style="font-size: 15px;">de control </span>
+Panel
 </center>
+
+
+</span>
+
 
  
 
@@ -562,10 +564,6 @@ Panel
 
 <div class="form-group col-sm-4">  
 <div class="well"  style="font-size: 20px;   height: 250px;">
-
-
-
-
 
 <p>
 
@@ -618,9 +616,18 @@ Carreras
 
 <div class="form-group col-sm-4">  
 <div class="well"  style="font-size: 20px;   height: 250px;">
+<center style="padding-top: 22%"   >
+
+<p>
+<a href=""   class="btn btn-default btn-block">
+<i class="fa fa-address-book" aria-hidden="true"></i>
+Horari
+
+</a>
+</p>
 
 
-
+</center>
 </div>
 </div>
 

@@ -804,8 +804,11 @@ Prefijo de aulas:</strong>
 
 
 <p>
-<center><i class="fa fa-check-circle text-success" aria-hidden="true"></i>
-Aulas creadas</center></p>
+
+
+  <strong>
+
+Aulas creadas</strong>   </p>
 
 @for($contador = 0; $contador < $numeroaulas; $contador++)
 

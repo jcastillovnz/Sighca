@@ -12,7 +12,7 @@
 <link   aria-hidden="true" href="{{ asset('img/favicon.png  ') }}  "  rel="shortcut icon" >
 
 
-    <title>Sighca</title>
+    <title>Sighca - Mi cuenta</title>
 
     <!-- Styles -->
     <link href="  {{ asset('css/bootstrap.min.css') }}         " rel="stylesheet">
@@ -442,6 +442,9 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
     <ol class="breadcrumb breadcrumb-arrow ">
     <li><a href="{{ url('/') }}">Inicio</a></li>
     <li><a href="">Configuracion </a></li>
+
+   <li><a href="">Mi cuenta</a></li>
+
     
   </ol>
 </div>
@@ -645,21 +648,18 @@ Mi cuenta </a> </center>
 
 
 
+
+
+
 <div class="form-group col-sm-8"><center>
-<button class="btn btn-default btn-sm btn-block"><i class="fa fa-get-pocket" aria-hidden="true"></i> Permiso de acceso</button></center>
+<a  target="blank"  href="https://github.com/jcastillovnz/Sighca"  class="btn btn-default btn-lg btn-block"><i class="fa fa-book" aria-hidden="true"></i> Documentacion</a></center>
 </div>
 
 
 
-<div class="form-group col-sm-8"><center>
-<button class="btn btn-default btn-sm btn-block"><i class="fa fa-book" aria-hidden="true"></i> Documentacion</button></center>
-</div>
-
-
-
 
 <div class="form-group col-sm-8"><center>
-<button class="btn btn-default btn-sm btn-block"><i class="fa fa-file-code-o" aria-hidden="true"></i>  Codigo fuente</button></center>
+<a    target="blank"   href="https://github.com/jcastillovnz/Sighca" class="btn btn-default btn-lg btn-block"><i class="fa fa-file-code-o" aria-hidden="true"></i>  Codigo fuente</a></center>
 </div>
 
 
@@ -669,10 +669,56 @@ Mi cuenta </a> </center>
 
 
 <div class="form-group col-sm-8"><center>
-<button class="btn btn-default btn-sm btn-block"><i class="fa fa-download" aria-hidden="true"></i>  Base de datos</button></center>
+<button class="btn btn-default btn-lg btn-block"><i class="fa fa-download" aria-hidden="true"></i>  Base de datos</button></center>
+
+
+
 </div>
 
 
+<div class="col-sm-12">
+
+
+
+  </div>
+
+
+
+
+
+
+<div class="col-sm-4"> 
+
+
+<div class="input-group">
+
+ <span class="input-group-addon">  <strong>  Periodo:</strong>   </span>
+
+      <input readonly=""   type="text" value="2-2017" class="form-control">
+      <span class="input-group-btn">
+        <button title="Modificar" class="btn btn-warning" type="button"><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
+      </span>
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="col-sm-4">
+ 
+  </div>
+
+
+
+
+<div class="col-sm-4">
+
+
+
+
+  </div>
 
 
 
@@ -688,16 +734,74 @@ Mi cuenta </a> </center>
 
 
 
+<div class="col-sm-12">
+
+ <center  style="font-size: 50px:"  >
+  <h4>   
+ <i class="fa fa-map-signs" aria-hidden="true"></i>   Permisos de acceso</h4>
 
 
 
 
+ </center>  
+  </div>
 
 
 
 
+<div        class="col-sm-4">   
+
+<div class="input-group">
+
+ <span class="input-group-addon">  <strong>  Administrador</strong>   </span>
+
+      <input readonly=""   type="text" value="AD5FF41F4" class="form-control">
+      <span class="input-group-btn">
+        <button  title="Modificar" class="btn btn-warning" type="button"><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
+      </span>
+      
+    </div>
+
+   </div>
 
 
+
+<div        class="col-sm-4">  
+
+
+<div class="input-group">
+
+ <span class="input-group-addon">  <strong>  Coordinador:</strong>   </span>
+
+      <input readonly=""   type="text" value="AD5FF41F4" class="form-control">
+      <span class="input-group-btn">
+        <button title="Modificar"   class="btn btn-warning" type="button"><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
+      </span>
+      
+    </div>
+   </div>
+
+
+
+<div        class="col-sm-4"> 
+
+
+
+<div class="input-group">
+
+ <span class="input-group-addon">  <strong>  Analista</strong>   </span>
+
+      <input readonly=""   type="text" value="AD5FF41F4" class="form-control">
+      <span class="input-group-btn">
+        <button title="Modificar" class="btn btn-warning" type="button"><i class="fa fa-pencil-square" aria-hidden="true"></i></button>
+      </span>
+      
+    </div>
+
+
+
+
+   </div>
 
 
 

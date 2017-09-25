@@ -533,14 +533,22 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-
-
+<div class="form-group">
+                           
+                            <select  id="ciudad" name="ciudad" class="form-control form-control-lg" >
+                                <option value="" selected="">Carrera</option>
+                                <option value="El tigre">Sistemas</option>
+                                <option value="San jose de guanipa">Petroleo</option>
+                                      <option value="San tome">Enfermeria</option>
+                               
+                            </select>
+                        </div>
 
 
 <div class="form-group">
                            
-                            <select  id="ciudad" name="ciudad" class="form-control" >
-                                <option value="" selected="">Seccion</option>
+                            <select  id="ciudad" name="ciudad" class="form-control form-control-lg" >
+                                <option value="" selected="">Carrera</option>
                                 <option value="El tigre">Sistemas</option>
                                 <option value="San jose de guanipa">Petroleo</option>
                                       <option value="San tome">Enfermeria</option>
@@ -551,29 +559,6 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
 
 
-<div class="form-group">
-                           
-                            <select  id="ciudad" name="ciudad" class="form-control" >
-                                <option value="" selected="">Pensum</option>
-                                <option value="El tigre">Sistemas</option>
-                                <option value="San jose de guanipa">Petroleo</option>
-                                      <option value="San tome">Enfermeria</option>
-                               
-                            </select>
-                        </div>
-
-
-
-<div class="form-group">
-                           
-                            <select  id="ciudad" name="ciudad" class="form-control" >
-                                <option value="" selected="">Asignatura</option>
-                                <option value="El tigre">Sistemas</option>
-                                <option value="San jose de guanipa">Petroleo</option>
-                                      <option value="San tome">Enfermeria</option>
-                               
-                            </select>
-                        </div>
 
 
 

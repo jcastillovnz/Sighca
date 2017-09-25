@@ -472,7 +472,7 @@ document.getElementById('logout-form').submit();" > <i class="fa fa-sign-out" ar
 
   <div  class="panel-heading">
 
-<span  style="padding-left: 20px; "  class="btn btn-default " >
+<span  style="padding-left: 20px; "  class=" " >
 
 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
 <strong>
@@ -647,7 +647,7 @@ Profesor</strong>
  
   <div  class="panel-heading">
 
-<span  style="padding-left: 20px; "  class="btn btn-default " >
+<span  style="padding-left: 20px; "  class="" >
 
 <i class="fa fa-calendar" aria-hidden="true"></i>
 <strong>
@@ -664,7 +664,7 @@ Horario asignado</strong>
   
 <a  href="" title="Asignar"   class="btn btn-success btn-sm" >
 
-<strong><i class="fa fa-calendar-o" aria-hidden="true"></i> </strong>   </a> 
+<strong><i class="fa fa-thumb-tack" aria-hidden="true"></i></strong>   </a> 
 
 
 

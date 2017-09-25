@@ -749,6 +749,18 @@ Asignar a una seccion</strong>
 
 
 
+<select  id="ciudad" name="ciudad" class="form-control input-sm" >
+<option value="" selected="">Seccion</option>
+<option value="El tigre">D01</option>
+<option value="El tigre">D02</option>
+
+
+<select  id="ciudad" name="ciudad" class="form-control input-sm" >
+
+</select>
+
+
+
 <span style="padding-left: 5px;">
 
 

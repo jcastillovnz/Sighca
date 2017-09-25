@@ -13,7 +13,7 @@
 
 
 //RUTA BIENVENIDA
-Route::get ('/','SistemaController@bienvenida' );
+Route::get ('/','SighcaController@bienvenida' );
 
 
 
@@ -59,10 +59,10 @@ Route::get('/diseñar-horario','HorarioController@index' );
 
 
 //RUTAS CONFIGURACION
-Route::get('/configuracion','SistemaController@configuracion' );
+Route::get('/configuracion','SighcaController@configuracion' );
 
 
-Route::get('/configuracion/mi-cuenta','SistemaController@micuenta' );
+Route::get('/configuracion/mi-cuenta','SighcaController@micuenta' );
 
 
 
